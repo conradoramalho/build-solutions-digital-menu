@@ -56,7 +56,9 @@ class ExampleApp extends PureComponent {
     );
   }
 
-  onBarCodeRead = console.log;
+  onBarCodeRead = (...rest) => {
+    console.log('on bar code read', ...rest);
+  };
 
   takePicture = async () => {
     if (this.camera) {
