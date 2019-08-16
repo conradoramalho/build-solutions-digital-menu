@@ -24,16 +24,16 @@ class ExampleApp extends PureComponent {
           flashMode={RNCamera.Constants.FlashMode.off}
           autoFocus={RNCamera.Constants.AutoFocus.on}
           androidCameraPermissionOptions={{
-            title: 'Permission to use camera',
-            message: 'We need your permission to use your camera',
-            buttonPositive: 'Ok',
-            buttonNegative: 'Cancel',
+            title: 'Permissão para usar a camera',
+            message: 'Nos precisamos de permissão para usar a camera',
+            buttonPositive: 'Confirmar',
+            buttonNegative: 'Cancelar',
           }}
           androidRecordAudioPermissionOptions={{
-            title: 'Permission to use audio recording',
-            message: 'We need your permission to use your audio',
-            buttonPositive: 'Ok',
-            buttonNegative: 'Cancel',
+            title: 'Permissão para usar o audio',
+            message: 'Nos precisamos de permissão para usar o audio',
+            buttonPositive: 'Confirmar',
+            buttonNegative: 'Cancelar',
           }}
           onBarCodeRead={this.onBarCodeRead}
           onGoogleVisionBarcodesDetected={({ barcodes }) => {
