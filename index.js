@@ -5,3 +5,5 @@ import Navigator from './app/main/Navigator';
 // console.disableYellowBox = true;
 
 AppRegistry.registerComponent(appName, () => Navigator);
+
+// adb shell input keyevent 82
