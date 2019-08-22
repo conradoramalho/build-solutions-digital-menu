@@ -15,7 +15,7 @@ class Details extends React.Component {
         <Text>Details Screen</Text>
         <Button
           title="Go to Details... again"
-          onPress={() => this.props.navigation.push('Details')}
+          onPress={() => this.props.navigation.push('DishesList')}
         />
         <Button
           title="Go to Home"

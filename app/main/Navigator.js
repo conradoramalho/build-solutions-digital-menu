@@ -8,12 +8,12 @@ const RootStack = createStackNavigator(
     Home: {
       screen: Screens.Home,
     },
-    Details: {
-      screen: Screens.Details,
+    DishesList: {
+      screen: Screens.DishesList,
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'DishesList',
   }
 );
 
