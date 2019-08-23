@@ -12,6 +12,7 @@ class HomeScreen extends React.Component {
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Screensa</Text>
         <Button title="Go to Detailsa" onPress={() => this.changeRoute()} />
+        <Button title="Go to Detailsa" onPress={() => this.changeRoute()} />
       </View>
     );
   }
