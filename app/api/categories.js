@@ -1,7 +1,11 @@
 import instance from './instance';
 
-const getCategories = () => instance.get('/categories');
+const getMainCategories = () => instance.get('/categories');
+
+const getSubCategories = ({ categoryId }) =>
+  instance.get(`/categories/${categoryId}/children`);
 
 export default {
-  getCategories,
+  getMainCategories,
+  getSubCategories,
 };

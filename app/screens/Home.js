@@ -8,7 +8,7 @@ const HomeScreen = props => {
   };
 
   useEffect(() => {
-    API.getCategories()
+    API.getMainCategories()
       .then(data => {
         console.log('data', data);
       })
