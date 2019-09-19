@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import Menu from '../modules/Home/Menu/Menu';
 import styled from 'styled-components/native';
+
+import Carousel from '../modules/Home/Carousel/Carousel';
+import Menu from '../modules/Home/Menu/Menu';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -12,10 +13,14 @@ const MenuWrapper = styled.View`
 `;
 
 const SlideWrapper = styled.View`
-  flex: 8;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  background-color: red;
+  flex-direction: column;
 `;
 
-const ImageWrapper = styled.Image`
+const CarouselStyled = styled(Carousel)`
   width: 100%;
   height: 100%;
 `;
@@ -28,11 +33,14 @@ class HomeScreen extends React.Component {
           <Menu />
         </MenuWrapper>
         <SlideWrapper>
-          <ImageWrapper source={{ uri: 'http://placehold.jp/1000x800.png' }} />
+          <Carousel />
         </SlideWrapper>
       </Wrapper>
     );
   }
 }
 
+{
+  /* <ImageWrapper source={{ uri: 'http://placehold.jp/1000x800.png' }} /> */
+}
 export default HomeScreen;
