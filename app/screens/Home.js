@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components/native';
-
+import { Text } from 'react-native';
 import Carousel from '../modules/Home/Carousel/Carousel';
 import Menu from '../modules/Home/Menu/Menu';
+import Header from '../components/Header/Header';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -25,6 +26,10 @@ const CarouselStyled = styled(Carousel)`
 `;
 
 class HomeScreen extends React.Component {
+  static navigationOptions = {
+    headerTitle: <Header />,
+  };
+
   render() {
     return (
       <Wrapper>
