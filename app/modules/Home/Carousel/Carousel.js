@@ -23,7 +23,7 @@ class HomeCarousel extends Component {
     return (
       <View>
         <ImageWrapper
-          source={{ uri: `http://placehold.jp/${500}x${500}.png` }}
+          source={{ uri: `http://placehold.jp/${1030}x${700}.png` }}
         />
       </View>
     );
@@ -37,8 +37,8 @@ class HomeCarousel extends Component {
         }}
         data={DATA}
         renderItem={this._renderItem}
-        sliderWidth={viewportWidth}
-        itemWidth={viewportWidth}
+        sliderWidth={1030}
+        itemWidth={1030}
       />
     );
   }

@@ -13,8 +13,7 @@ const MenuWrapper = styled.View`
 `;
 
 const SlideWrapper = styled.View`
-  width: 500px;
-  height: 500px;
+  flex: 8;
   margin: auto;
   background-color: red;
   flex-direction: column;
