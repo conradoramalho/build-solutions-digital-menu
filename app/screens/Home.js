@@ -20,14 +20,6 @@ const SlideWrapper = styled.View`
   flex-direction: column;
 `;
 
-const CarouselStyled = styled(Carousel)`
-  width: 100%;
-  height: 100%;
-`;
-
-// static navigationOptions = {
-//   headerTitle: <Header />,
-// };
 class HomeScreen extends React.Component {
   callback = () => {
     this.props.navigation.navigate('DishesList');
@@ -47,7 +39,4 @@ class HomeScreen extends React.Component {
   }
 }
 
-{
-  /* <ImageWrapper source={{ uri: 'http://placehold.jp/1000x800.png' }} /> */
-}
 export default HomeScreen;
