@@ -25,16 +25,19 @@ const CarouselStyled = styled(Carousel)`
   height: 100%;
 `;
 
+// static navigationOptions = {
+//   headerTitle: <Header />,
+// };
 class HomeScreen extends React.Component {
-  static navigationOptions = {
-    headerTitle: <Header />,
+  callback = () => {
+    this.props.navigation.navigate('DishesList');
   };
 
   render() {
     return (
       <Wrapper>
         <MenuWrapper>
-          <Menu />
+          <Menu change={this.callback} />
         </MenuWrapper>
         <SlideWrapper>
           <Carousel />

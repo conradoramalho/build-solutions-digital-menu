@@ -13,7 +13,7 @@ const ButtonText = styled.Text`
   font-size: 20px;
 `;
 
-function Menu() {
+function Menu({ change }) {
   const onSelect = () => {
     console.log('ok');
   };
@@ -23,7 +23,7 @@ function Menu() {
       <FlatList
         data={START_MENU}
         renderItem={({ item }) => (
-          <Button onPress={onSelect}>
+          <Button onPress={() => change('DishesList')}>
             <ButtonText>{item.title}</ButtonText>
           </Button>
         )}

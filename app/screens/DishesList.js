@@ -1,6 +1,10 @@
 import React from 'react';
 import { Button, View, Text } from 'react-native';
+import Header from '../components/Header/Header';
 
+// static navigationOptions = {
+//   headerTitle: <Header />,
+// };
 class DishesList extends React.Component {
   render() {
     return (
