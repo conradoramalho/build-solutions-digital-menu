@@ -23,13 +23,6 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'DishesList',
-    navigationOptions: {
-      header: (
-        <View>
-          <Text>olaasdasdas</Text>
-        </View>
-      ),
-    },
   }
 );
 
