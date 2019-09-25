@@ -29,6 +29,7 @@ const Container = styled.View`
 const Title = styled.View`
   flex: 1;
   flex-direction: row;
+  justify-content: space-between;
 `;
 
 const Description = styled.View`
@@ -38,6 +39,7 @@ const Description = styled.View`
 const Buttons = styled.View`
   flex: 1;
   flex-direction: row;
+  justify-content: space-between;
 `;
 
 const Name = styled.Text`
@@ -45,17 +47,14 @@ const Name = styled.Text`
 `;
 
 const Price = styled.Text`
-  margin: 0 30px 0 auto;
   font-size: 20px;
 `;
 
 const SeeMore = styled.Button`
-  width: 300px;
+  flex: 1;
 `;
 
-const Add = styled.Button`
-  width: 300px;
-`;
+const Add = styled.Button``;
 
 const DishCard = () => {
   return (
