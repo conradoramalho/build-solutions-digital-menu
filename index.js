@@ -1,11 +1,11 @@
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
-import Navigator from './app/main/Navigator';
+import App from './app/main/App';
 import { YellowBox } from 'react-native';
 
 // YellowBox.ignoreWarnings(['Warning: ...']);
 
 console.disableYellowBox = true;
-AppRegistry.registerComponent(appName, () => Navigator);
+AppRegistry.registerComponent(appName, () => App);
 
 // adb shell input keyevent 82
