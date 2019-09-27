@@ -3,7 +3,6 @@ import { View, Text } from 'react-native';
 import Menu from '../modules/Home/Menu/Menu';
 import styled from 'styled-components/native';
 import DishCard from '../components/DishCard/DishCard';
-import Modal from 'react-native-modal';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -36,11 +35,6 @@ function DishesList() {
             onPress={() => this.props.navigation.navigate('Home')}
           /> */}
       </Container>
-      <Modal isVisible={true}>
-        <View style={{ flex: 1 }}>
-          <Text>I am the modal content!</Text>
-        </View>
-      </Modal>
     </Wrapper>
   );
 }

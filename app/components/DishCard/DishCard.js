@@ -1,6 +1,7 @@
-import React from 'react';
-import { View, Text, Button } from 'react-native';
+import React, { useState } from 'react';
+import { Text } from 'react-native';
 import styled from 'styled-components/native';
+import DishModal from '../DishModal/DishModal';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -56,7 +57,16 @@ const SeeMore = styled.Button`
 
 const Add = styled.Button``;
 
+const Dish = {
+  title: 'Gran Prime Burguer',
+  price: 'R$ 37,00',
+  description:
+    'Hamburguer de picanha envolvido por uma massa de pizza, cebola caramelizada, picles e cheddar',
+};
+
 const DishCard = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
     <Wrapper>
       <ImageWrapper>
@@ -64,20 +74,22 @@ const DishCard = () => {
       </ImageWrapper>
       <Container>
         <Title>
-          <Name>Gran Prime Burguer</Name>
-          <Price>R$ 37,00</Price>
+          <Name>{Dish.title}</Name>
+          <Price>{Dish.price}</Price>
         </Title>
         <Description>
-          <Text>
-            Hamburguer de picanha envolvido por uma massa de pizza, cebola
-            caramelizada, picles e cheddar
-          </Text>
+          <Text>{Dish.description} </Text>
         </Description>
         <Buttons>
-          <SeeMore title="Ver mais" />
+          <SeeMore title="Ver mais" onPress={() => setIsModalVisible(true)} />
           <Add title="Adicionar" />
         </Buttons>
       </Container>
+      <DishModal
+        dish={Dish}
+        isVisible={isModalVisible}
+        onClose={() => setIsModalVisible(false)}
+      />
     </Wrapper>
   );
 };
