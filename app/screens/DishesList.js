@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from 'react-native';
 import Menu from '../modules/Home/Menu/Menu';
 import styled from 'styled-components/native';
 import DishCard from '../components/DishCard/DishCard';
@@ -18,23 +17,25 @@ const Container = styled.View`
   flex-direction: column;
 `;
 
-class DishesList extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <MenuWrapper>
-          <Menu />
-        </MenuWrapper>
-        <Container>
+function DishesList() {
+  const itens = Array(3).fill(0);
+
+  return (
+    <Wrapper>
+      <MenuWrapper>
+        <Menu />
+      </MenuWrapper>
+      <Container>
+        {itens.map(() => (
           <DishCard />
-          {/* <Button
+        ))}
+        {/* <Button
             title="Go to Home"
             onPress={() => this.props.navigation.navigate('Home')}
           /> */}
-        </Container>
-      </Wrapper>
-    );
-  }
+      </Container>
+    </Wrapper>
+  );
 }
 
 export default DishesList;

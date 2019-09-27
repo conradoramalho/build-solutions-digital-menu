@@ -4,8 +4,9 @@ import styled from 'styled-components/native';
 
 const Wrapper = styled.View`
   flex-direction: row;
-  background-color: blue;
   padding: 20px;
+  border-width: 1px;
+  border-color: gray;
 `;
 
 const ImageWrapper = styled.View`
@@ -21,7 +22,6 @@ const Container = styled.View`
   flex: 3;
   flex-direction: column;
   height: 250px;
-  background-color: red;
   padding: 20px;
   position: relative;
 `;
