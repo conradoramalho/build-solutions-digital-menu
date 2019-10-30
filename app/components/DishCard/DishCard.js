@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import DishModal from '../DishModal/DishModal';
+import AddDishModal from '../Dish/AddDishModal';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -65,7 +66,8 @@ const Dish = {
 };
 
 const DishCard = () => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isDetailsModalVisible, setIsDetailsModalVisible] = useState(false);
+  const [isAddDishModalVisible, setIsAddDishModalVisible] = useState(true);
 
   return (
     <Wrapper>
@@ -81,14 +83,25 @@ const DishCard = () => {
           <Text>{Dish.description} </Text>
         </Description>
         <Buttons>
-          <SeeMore title="Ver mais" onPress={() => setIsModalVisible(true)} />
-          <Add title="Adicionar" />
+          <SeeMore
+            title="Ver mais"
+            onPress={() => setIsDetailsModalVisible(true)}
+          />
+          <Add
+            title="Adicionar"
+            onPress={() => setIsAddDishModalVisible(true)}
+          />
         </Buttons>
       </Container>
       <DishModal
         dish={Dish}
-        isVisible={isModalVisible}
-        onClose={() => setIsModalVisible(false)}
+        isVisible={isDetailsModalVisible}
+        onClose={() => setIsDetailsModalVisible(false)}
+      />
+      <AddDishModal
+        dish={Dish}
+        isVisible={isAddDishModalVisible}
+        onClose={() => setIsAddDishModalVisible(false)}
       />
     </Wrapper>
   );

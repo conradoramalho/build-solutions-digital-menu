@@ -19,7 +19,7 @@ const Container = styled.View`
 `;
 
 function DishesList() {
-  const itens = Array(3).fill(0);
+  const itens = Array(1).fill(0);
 
   return (
     <Wrapper>
