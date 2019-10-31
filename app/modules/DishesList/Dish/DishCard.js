@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Text } from 'react-native';
 import styled from 'styled-components/native';
-import DishModal from '../DishModal/DishModal';
-import AddDishModal from '../Dish/AddDishModal';
+import DishModal from './DishModal';
+import AddDishModal from './AddDishModal';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -67,7 +67,7 @@ const Dish = {
 
 const DishCard = () => {
   const [isDetailsModalVisible, setIsDetailsModalVisible] = useState(false);
-  const [isAddDishModalVisible, setIsAddDishModalVisible] = useState(true);
+  const [isAddDishModalVisible, setIsAddDishModalVisible] = useState(false);
 
   return (
     <Wrapper>

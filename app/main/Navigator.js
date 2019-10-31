@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 import { createStackNavigator } from 'react-navigation-stack';
 import Header from '../components/Header/Header';
-import * as Screens from '../screens';
+import * as Screens from '../modules';
 
 const defaultHeader = {
   header: <Header />,

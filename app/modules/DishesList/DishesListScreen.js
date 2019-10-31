@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import Menu from '../modules/Home/Menu/Menu';
 import styled from 'styled-components/native';
-import DishCard from '../components/DishCard/DishCard';
+import { DishCard } from '../modules/DishesList';
 
 const Wrapper = styled.View`
   flex-direction: row;
