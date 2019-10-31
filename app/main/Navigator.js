@@ -20,9 +20,18 @@ const RootStack = createStackNavigator(
     DishesList: {
       screen: Screens.DishesList,
     },
+    About: {
+      screen: Screens.About,
+    },
+    Deals: {
+      screen: Screens.Deals,
+    },
+    Highlights: {
+      screen: Screens.Highlights,
+    },
   },
   {
-    initialRouteName: 'DishesList',
+    initialRouteName: 'Home',
   }
 );
 

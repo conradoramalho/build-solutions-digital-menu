@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import Menu from '../Home/Menu/Menu';
+import Menu from './Menu/Menu';
 import styled from 'styled-components/native';
 import DishCard from './Dish/DishCard';
 
@@ -18,13 +18,14 @@ const Container = styled.View`
   flex-direction: column;
 `;
 
-function DishesList() {
+function DishesList({ navigation }) {
   const itens = Array(1).fill(0);
 
   return (
     <Wrapper>
       <MenuWrapper>
-        <Menu />
+        <Text>Dishes List</Text>
+        <Menu navigate={navigation.navigate} />
       </MenuWrapper>
       <Container>
         {itens.map(() => (

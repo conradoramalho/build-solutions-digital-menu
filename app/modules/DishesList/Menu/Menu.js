@@ -2,7 +2,14 @@ import React from 'react';
 import { SafeAreaView, TouchableOpacity, FlatList, Text } from 'react-native';
 import styled from 'styled-components/native';
 
-import { START_MENU } from '../../../constants';
+const MENU = [
+  { label: 'Aperitivos' },
+  { label: 'Pizzas' },
+  { label: 'Massas' },
+  { label: 'Hamburguer' },
+  { label: 'Pratos Quentes' },
+  { label: 'Bebidas' },
+];
 
 const Button = styled.TouchableOpacity`
   padding: 20px;
@@ -13,18 +20,14 @@ const ButtonText = styled.Text`
   font-size: 20px;
 `;
 
-function Menu({ change }) {
-  const onSelect = () => {
-    console.log('ok');
-  };
-
+function Menu({ navigate }) {
   return (
     <SafeAreaView>
       <FlatList
-        data={START_MENU}
+        data={MENU}
         renderItem={({ item }) => (
-          <Button onPress={() => change('DishesList')}>
-            <ButtonText>{item.title}</ButtonText>
+          <Button onPress={() => navigate('Home')}>
+            <ButtonText>{item.label}</ButtonText>
           </Button>
         )}
         keyExtractor={item => item.id}

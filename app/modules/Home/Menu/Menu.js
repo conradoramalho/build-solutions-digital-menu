@@ -13,17 +13,13 @@ const ButtonText = styled.Text`
   font-size: 20px;
 `;
 
-function Menu({ change }) {
-  const onSelect = () => {
-    console.log('ok');
-  };
-
+function Menu({ navigate }) {
   return (
     <SafeAreaView>
       <FlatList
         data={START_MENU}
         renderItem={({ item }) => (
-          <Button onPress={() => change('DishesList')}>
+          <Button onPress={() => navigate(item.to)}>
             <ButtonText>{item.title}</ButtonText>
           </Button>
         )}
