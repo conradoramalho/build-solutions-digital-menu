@@ -3,6 +3,7 @@ import styled from 'styled-components/native';
 import { Text } from 'react-native';
 import Carousel from './Carousel/Carousel';
 import Menu from './Menu/Menu';
+import Button from '../../components/Button/Button';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -24,6 +25,10 @@ function HomeScreen({ navigation }) {
     <Wrapper>
       <MenuWrapper>
         <Text>Home</Text>
+        <Button
+          title="Press me"
+          onPress={() => 'Simple Button pressed'}
+        ></Button>
         <Menu navigate={navigation.navigate} />
       </MenuWrapper>
       <SlideWrapper>
