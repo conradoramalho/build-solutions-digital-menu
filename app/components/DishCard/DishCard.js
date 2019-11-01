@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text } from 'react-native';
 import styled from 'styled-components/native';
-import DishModal from './DishModal';
-import AddDishModal from './AddDishModal';
 import Button from '../Button/Button';
 
 const Wrapper = styled.View`
@@ -53,12 +51,6 @@ const Price = styled.Text`
   font-size: 20px;
 `;
 
-const SeeMore = styled.Button`
-  flex: 1;
-`;
-
-const Add = styled.Button``;
-
 const Dish = {
   title: 'Gran Prime Burguer',
   price: 'R$ 37,00',
@@ -66,10 +58,7 @@ const Dish = {
     'Hamburguer de picanha envolvido por uma massa de pizza, cebola caramelizada, picles e cheddar',
 };
 
-const DishCard = () => {
-  const [isDetailsModalVisible, setIsDetailsModalVisible] = useState(false);
-  const [isAddDishModalVisible, setIsAddDishModalVisible] = useState(false);
-
+function DishCard() {
   return (
     <Wrapper>
       <ImageWrapper>
@@ -94,18 +83,8 @@ const DishCard = () => {
           />
         </Buttons>
       </Container>
-      <DishModal
-        dish={Dish}
-        isVisible={isDetailsModalVisible}
-        onClose={() => setIsDetailsModalVisible(false)}
-      />
-      <AddDishModal
-        dish={Dish}
-        isVisible={isAddDishModalVisible}
-        onClose={() => setIsAddDishModalVisible(false)}
-      />
     </Wrapper>
   );
-};
+}
 
 export default DishCard;
