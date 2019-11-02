@@ -8,8 +8,12 @@ const Wrapper = styled.View`
   flex-direction: row;
 `;
 
+const MenuWrapper = styled.View`
+  width: 280px;
+`;
+
 const Container = styled.View`
-  flex: 8;
+  width: 1000px;
   margin: auto;
   flex-direction: column;
 `;
@@ -19,7 +23,9 @@ function DishesList({ navigation }) {
 
   return (
     <Wrapper>
-      <Menu navigate={navigation.navigate} />
+      <MenuWrapper>
+        <Menu navigate={navigation.navigate} />
+      </MenuWrapper>
       <Container>
         <FlatList
           data={itens}

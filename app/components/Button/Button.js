@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.TouchableOpacity`
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
   height: 100%;
   border-radius: 9px;
   background-color: #e12537;

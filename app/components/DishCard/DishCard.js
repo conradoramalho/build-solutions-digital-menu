@@ -2,19 +2,22 @@ import React from 'react';
 import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import Button from '../Button/Button';
+import { Hamburguer } from '../../assets/images';
 
 const Wrapper = styled.View`
-  height: 225px;
+  height: 240;
   background-color: #fafafa;
   flex-direction: row;
-  border-width: 1px;
-  border-color: gray;
-  padding: 15px 40px 15px 20px;
+  padding: 20px 30px;
+  position: relative;
+
+  border-bottom-width: 1px;
+  border-bottom-color: #979797;
 `;
 
 const ImageWrapper = styled.View`
-  width: 220px;
-  height: 195px;
+  width: 280;
+  height: 200;
 `;
 
 const Image = styled.Image`
@@ -23,42 +26,43 @@ const Image = styled.Image`
 `;
 
 const Container = styled.View`
-  flex: 3;
+  flex: 1;
   flex-direction: column;
-  height: 250px;
-  padding: 20px;
+  padding: 0 0 0 20px;
   position: relative;
 `;
 
 const Title = styled.View`
-  height: 30px;
+  height: 30;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 15;
+`;
+
+const DishName = styled.Text`
+  font-size: 21;
+  color: #6f6f6f;
+  font-family: Nunito-Bold;
+`;
+
+const DishPrice = styled.Text`
+  font-size: 21;
+  font-family: Nunito-Bold;
+  color: #6f6f6f;
 `;
 
 const Description = styled.Text`
-  height: 81px;
-  font-size: 19px;
+  height: 81;
+  font-size: 19;
   color: #6f6f6f;
-  line-height: 27px;
+  line-height: 27;
+  margin-bottom: 20;
 `;
 
 const Buttons = styled.View`
-  height: 50px;
+  height: 50;
   flex-direction: row;
   justify-content: space-between;
-`;
-
-const Name = styled.Text`
-  font-size: 21px;
-  font-weight: 600;
-  color: #6f6f6f;
-`;
-
-const Price = styled.Text`
-  font-size: 21px;
-  font-weight: 600;
-  color: #6f6f6f;
 `;
 
 const Dish = {
@@ -72,12 +76,12 @@ function DishCard() {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image source={{ uri: `http://placehold.jp/${220}x${195}.png` }} />
+        <Image source={Hamburguer} />
       </ImageWrapper>
       <Container>
         <Title>
-          <Name>{Dish.title}</Name>
-          <Price>{Dish.price}</Price>
+          <DishName>{Dish.title}</DishName>
+          <DishPrice>{Dish.price}</DishPrice>
         </Title>
         <Description>{Dish.description}</Description>
         <Buttons>
