@@ -19,7 +19,7 @@ const Container = styled.View`
 `;
 
 function DishesList({ navigation }) {
-  const itens = Array(1).fill(0);
+  const itens = Array(20).fill(0);
 
   return (
     <Wrapper>
@@ -31,10 +31,6 @@ function DishesList({ navigation }) {
         {itens.map(() => (
           <DishCard />
         ))}
-        {/* <Button
-            title="Go to Home"
-            onPress={() => this.props.navigation.navigate('Home')}
-          /> */}
       </Container>
     </Wrapper>
   );

@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.TouchableOpacity`
-  width: 231px;
-  height: 59px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
   border-radius: 9px;
   background-color: #e12537;
 `;

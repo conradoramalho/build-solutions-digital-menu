@@ -4,18 +4,21 @@ import styled from 'styled-components/native';
 import Button from '../Button/Button';
 
 const Wrapper = styled.View`
+  height: 225px;
+  background-color: #fafafa;
   flex-direction: row;
-  padding: 20px;
   border-width: 1px;
   border-color: gray;
+  padding: 15px 40px 15px 20px;
 `;
 
 const ImageWrapper = styled.View`
-  flex: 1;
+  width: 220px;
+  height: 195px;
 `;
 
 const Image = styled.Image`
-  height: 250px;
+  height: 100%;
   width: 100%;
 `;
 
@@ -28,50 +31,55 @@ const Container = styled.View`
 `;
 
 const Title = styled.View`
-  flex: 1;
+  height: 30px;
   flex-direction: row;
   justify-content: space-between;
 `;
 
-const Description = styled.View`
-  flex: 2;
+const Description = styled.Text`
+  height: 81px;
+  font-size: 19px;
+  color: #6f6f6f;
+  line-height: 27px;
 `;
 
 const Buttons = styled.View`
-  flex: 1;
+  height: 50px;
   flex-direction: row;
   justify-content: space-between;
 `;
 
 const Name = styled.Text`
-  font-size: 20px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #6f6f6f;
 `;
 
 const Price = styled.Text`
-  font-size: 20px;
+  font-size: 21px;
+  font-weight: 600;
+  color: #6f6f6f;
 `;
 
 const Dish = {
   title: 'Gran Prime Burguer',
   price: 'R$ 37,00',
   description:
-    'Hamburguer de picanha envolvido por uma massa de pizza, cebola caramelizada, picles e cheddar',
+    'Molho de tomate fresco, calabresa especial fatiada, rodelas de cebola, orégano e azeitonas pretas',
 };
 
 function DishCard() {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image source={{ uri: `http://placehold.jp/${250}x${250}.png` }} />
+        <Image source={{ uri: `http://placehold.jp/${220}x${195}.png` }} />
       </ImageWrapper>
       <Container>
         <Title>
           <Name>{Dish.title}</Name>
           <Price>{Dish.price}</Price>
         </Title>
-        <Description>
-          <Text>{Dish.description} </Text>
-        </Description>
+        <Description>{Dish.description}</Description>
         <Buttons>
           <Button
             title="Ver mais"
