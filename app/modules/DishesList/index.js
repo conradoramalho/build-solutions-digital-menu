@@ -8,44 +8,18 @@ const Wrapper = styled.View`
   flex-direction: row;
 `;
 
-const MenuWrapper = styled.View`
-  flex: 2;
-`;
-
 const Container = styled.View`
   flex: 8;
   margin: auto;
   flex-direction: column;
 `;
 
-const DATA = [
-  {
-    title: 'Main dishes',
-    data: ['Pizza', 'Burger', 'Risotto'],
-  },
-  {
-    title: 'Sides',
-    data: ['French Fries', 'Onion Rings', 'Fried Shrimps'],
-  },
-  {
-    title: 'Drinks',
-    data: ['Water', 'Coke', 'Beer'],
-  },
-  {
-    title: 'Desserts',
-    data: ['Cheese Cake', 'Ice Cream'],
-  },
-];
-
 function DishesList({ navigation }) {
   const itens = Array(20).fill({});
 
   return (
     <Wrapper>
-      <MenuWrapper>
-        <Text>Dishes List</Text>
-        <Menu navigate={navigation.navigate} />
-      </MenuWrapper>
+      <Menu navigate={navigation.navigate} />
       <Container>
         <FlatList
           data={itens}
