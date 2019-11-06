@@ -25,10 +25,6 @@ function HomeScreen({ navigation }) {
     <Wrapper>
       <MenuWrapper>
         <Text>Home</Text>
-        <Button
-          title="Press me"
-          onPress={() => 'Simple Button pressed'}
-        ></Button>
         <Menu navigate={navigation.navigate} />
       </MenuWrapper>
       <SlideWrapper>
