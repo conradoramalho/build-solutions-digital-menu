@@ -1,8 +1,8 @@
-import React from 'react';
-import { SafeAreaView, TouchableOpacity, FlatList, Text } from 'react-native';
-import styled from 'styled-components/native';
+import React from "react";
+import { SafeAreaView, FlatList } from "react-native";
+import styled from "styled-components/native";
 
-import { START_MENU } from '../../../constants';
+import { START_MENU } from "../../../constants";
 
 const Button = styled.TouchableOpacity`
   padding: 20px;

@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { View, Text, Image, Dimensions } from 'react-native';
-import Carousel from 'react-native-snap-carousel';
-import styled from 'styled-components/native';
+import React, { Component } from "react";
+import { View, Text, Image, Dimensions } from "react-native";
+import Carousel from "react-native-snap-carousel";
+import styled from "styled-components/native";
+import { HamburguerHome } from "../../../assets/images";
 
-const { width: viewportWidth, height } = Dimensions.get('window');
+const { width: viewportWidth, height } = Dimensions.get("window");
 
 const DATA = [
-  { title: 'ABCDEFG' },
-  { title: 'ABCDEFG' },
-  { title: 'ABCDEFG' },
-  { title: 'ABCDEFG' },
-  { title: 'ABCDEFG' },
+  { title: "ABCDEFG" },
+  { title: "ABCDEFG" },
+  { title: "ABCDEFG" },
+  { title: "ABCDEFG" },
+  { title: "ABCDEFG" }
 ];
 
 const ImageWrapper = styled.Image`
@@ -18,30 +19,24 @@ const ImageWrapper = styled.Image`
   height: 100%;
 `;
 
-class HomeCarousel extends Component {
-  _renderItem({ item, index }) {
+function HomeCarousel() {
+  const renderItem = ({ item, index }) => {
     return (
       <View>
-        <ImageWrapper
-          source={{ uri: `http://placehold.jp/${1030}x${700}.png` }}
-        />
+        <Text>Alo mae</Text>
+        <ImageWrapper source={HamburguerHome} />
       </View>
     );
-  }
+  };
 
-  render() {
-    return (
-      <Carousel
-        ref={c => {
-          this._carousel = c;
-        }}
-        data={DATA}
-        renderItem={this._renderItem}
-        sliderWidth={1030}
-        itemWidth={1030}
-      />
-    );
-  }
+  return (
+    <Carousel
+      data={DATA}
+      renderItem={renderItem}
+      sliderWidth={1030}
+      itemWidth={1030}
+    />
+  );
 }
 
 export default HomeCarousel;
