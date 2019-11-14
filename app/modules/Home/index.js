@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import {Text} from 'react-native';
 import Carousel from './Carousel/Carousel';
 import Menu from './Menu/Menu';
-import Button from '../../components/Button/Button';
-import Garcom from '../../assets/icon_garcom.svg';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -24,7 +21,6 @@ function HomeScreen({navigation}) {
   return (
     <Wrapper>
       <MenuWrapper>
-        <Garcom />
         <Menu navigate={navigation.navigate} />
       </MenuWrapper>
       <SlideWrapper>
