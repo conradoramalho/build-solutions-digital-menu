@@ -32,12 +32,14 @@ const Title = styled.Text`
   font-size: 30px;
   bottom: 0;
   z-index: 5;
+
 `;
 
 function HomeCarousel() {
   const renderItem = ({ item, index }) => {
     return (
       <Container>
+        <
         <Title>Cream Cheese Bacon Rib</Title>
         <ImageWrapper source={HamburguerHome} />
       </Container>
