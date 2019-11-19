@@ -72,7 +72,7 @@ const Dish = {
     'Molho de tomate fresco, calabresa especial fatiada, rodelas de cebola, orégano e azeitonas pretas',
 };
 
-function DishCard() {
+function DishCard({openDetailsModal, openAddModal}) {
   return (
     <Wrapper>
       <ImageWrapper>
@@ -85,14 +85,8 @@ function DishCard() {
         </Title>
         <Description>{Dish.description}</Description>
         <Buttons>
-          <Button
-            title="Ver mais"
-            onPress={() => setIsDetailsModalVisible(true)}
-          />
-          <Button
-            title="Adicionar"
-            onPress={() => setIsAddDishModalVisible(true)}
-          />
+          <Button title="Ver mais" onPress={openDetailsModal} />
+          <Button title="Adicionar" onPress={openAddModal} />
         </Buttons>
       </Container>
     </Wrapper>
