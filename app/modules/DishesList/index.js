@@ -4,7 +4,7 @@ import Menu from './Menu/Menu';
 import styled from 'styled-components/native';
 import DishCard from '../../components/DishCard/DishCard';
 import DishDetailsModal from './Dish/DishDetailsModal';
-import AddDishModal from './Dish/AddDishModal';
+import AddDishModal from './Dish/AddDishModal/AddDishModal';
 
 const Wrapper = styled.View`
   flex-direction: row;
