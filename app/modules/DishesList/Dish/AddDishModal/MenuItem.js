@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import RequiredSuccess from '../../../../assets/icons/menu-item-ok.svg';
 
 const Wrapper = styled.View`
-  width: 446px;
+  width: 100%;
   height: 85px;
   background-color: #f8f8f8;
   flex-direction: row;
@@ -21,7 +21,7 @@ const Title = styled.Text`
 `;
 
 const Center = styled.View`
-  width: 300px;
+  width: 400px;
 `;
 
 const Box = styled.View`

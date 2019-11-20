@@ -3,11 +3,24 @@ import {ScrollView, Button, Text, View} from 'react-native';
 import styled from 'styled-components';
 import Modal from 'react-native-modal';
 import Counter from '../../../../components/Counter/Counter';
+import {HamburguerAdd} from '../../../../assets/images';
+
 import MenuItem from './MenuItem';
+
+const DishTitle = styled.Text`
+  width: 209px;
+  height: 28px;
+  font-family: Nunito;
+  font-size: 22px;
+  font-weight: bold;
+  color: #6f6f6f;
+  margin: 0 0 20px 32px;
+`;
 
 const Image = styled.Image`
   height: 200px;
   width: 100%;
+  margin-bottom: 10px;
 `;
 
 const MENU_ITEMS = [
@@ -31,10 +44,10 @@ const MENU_ITEMS = [
 function AddDishModal({isVisible, onClose, dish}) {
   return (
     <Modal isVisible={isVisible}>
-      <View style={{flex: 1, flexDirection: 'row'}}>
+      <View style={{flex: 1, flexDirection: 'row', backgroundColor: '#fdfdfd'}}>
         <View style={{flex: 1, backgroundColor: 'white'}}>
-          <Image source={{uri: `http://placehold.jp/${250}x${250}.png`}} />
-          <Text>{dish.title}</Text>
+          <Image source={HamburguerAdd} />
+          <DishTitle>{dish.title}</DishTitle>
           <ScrollView>
             {MENU_ITEMS.map(item => (
               <MenuItem key={item.id} item={item} />
