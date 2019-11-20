@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components/native';
+import RequiredSuccess from '../../../../assets/icons/menu-item-ok.svg';
 
 const Wrapper = styled.View`
   width: 446px;
   height: 85px;
   background-color: #f8f8f8;
+  flex-direction: row;
+  margin-bottom: 5px;
+  align-items: center;
+  padding: 17px 20px 14px 50px;
 `;
 
 const Title = styled.Text`
@@ -15,30 +20,52 @@ const Title = styled.Text`
   font-family: Nunito;
 `;
 
+const Center = styled.View`
+  width: 300px;
+`;
+
 const Box = styled.View`
   width: 34px;
   height: 34px;
   background-color: #e12537;
+  border-radius: 50;
+  margin-right: 20px;
+  justify-content: center;
 `;
 
 const Label = styled.Text`
-  width: 15px;
-  height: 22px;
   font-family: Roboto;
   font-size: 19px;
   font-weight: 500;
-  text-align: center;
   color: #ffffff;
+  align-self: center;
 `;
 
+const Required = styled.Text`
+  width: 80px;
+  height: 27px;
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 27px;
+  color: #d93645;
+`;
+
+const IconWrapper = styled.View``;
+
 function MenuItem({item}) {
-  console.log('item: ', item);
   return (
     <Wrapper>
       <Box>
         <Label>{item.id}</Label>
       </Box>
-      <Title>{item.title}</Title>
+      <Center>
+        <Title>{item.title}</Title>
+        <Required>obrigatório</Required>
+      </Center>
+      <IconWrapper>
+        <RequiredSuccess />
+      </IconWrapper>
     </Wrapper>
   );
 }
