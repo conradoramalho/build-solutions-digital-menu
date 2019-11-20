@@ -16,7 +16,7 @@ const Title = styled.Text`
   color: #6f6f6f;
   font-style: normal;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 24px;
   font-family: Nunito;
 `;
 
