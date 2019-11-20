@@ -1,11 +1,23 @@
 import React from 'react';
-import {ScrollView, Button, Text, View, CheckBox} from 'react-native';
+import {ScrollView, View, CheckBox} from 'react-native';
 import styled from 'styled-components';
 import Modal from 'react-native-modal';
 import Counter from '../../../../components/Counter/Counter';
+import Button from '../../../../components/Button/Button';
+
 import {HamburguerAdd} from '../../../../assets/images';
 
 import MenuItem from './MenuItem';
+
+const SecondWrapper = styled.View`
+  flex: 1;
+  border-radius: 50;
+  padding: 50px 28px 26px 48px;
+`;
+
+const CounterWrapper = styled.View`
+  margin-bottom: 30px;
+`;
 
 const DishTitle = styled.Text`
   font-family: Nunito;
@@ -70,11 +82,17 @@ const ItemName = styled.Text`
 const ItemValue = styled.Text`
   height: 36px;
   font-family: Nunito;
-  font-size: 26.7px;
-  font-weight: 300;
+  font-size: 25.3px;
   line-height: 36px;
   text-align: right;
   color: #656565;
+  margin-left: auto;
+`;
+
+const Finish = styled(Button)`
+  width: 207px;
+  height: 79px;
+  align-self: flex-end;
 `;
 
 const MENU_ITEMS = [
@@ -147,9 +165,11 @@ function AddDishModal({isVisible, onClose, dish}) {
             <Subtotal>R$ 53,00</Subtotal>
           </SubTotalWrapper>
         </View>
-        <View style={{flex: 1, borderRadius: 50}}>
-          <Title>Quantidade</Title>
-          <Counter />
+        <SecondWrapper>
+          <CounterWrapper>
+            <Title>Quantidade</Title>
+            <Counter />
+          </CounterWrapper>
           <Title>Opcionais:</Title>
           <ScrollView>
             {ITEMS.map(item => (
@@ -160,8 +180,8 @@ function AddDishModal({isVisible, onClose, dish}) {
               </ItemWrapper>
             ))}
           </ScrollView>
-          <Button title="Próxima" onPress={onClose} />
-        </View>
+          <Finish title="Próxima" onPress={onClose} />
+        </SecondWrapper>
       </View>
     </Modal>
   );

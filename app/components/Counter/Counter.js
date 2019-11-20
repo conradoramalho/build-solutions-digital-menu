@@ -3,20 +3,22 @@ import {Text, TouchableOpacity} from 'react-native';
 import styled from 'styled-components/native';
 
 const Wrapper = styled.View`
+  width: 100px;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Value = styled.Text`
-  font-family: Nunito;
-  font-size: 53.3px;
-  font-weight: 600;
+  font-size: 33.3px;
+  font-weight: 300;
   text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  color: #646464;
 `;
 
 const Icon = styled.Text`
   font-family: Nunito;
-  font-size: 53.3px;
+  font-size: 41.3px;
   font-weight: 600;
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
