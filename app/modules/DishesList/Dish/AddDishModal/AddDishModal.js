@@ -47,18 +47,27 @@ const Title = styled.Text`
   color: #6f6f6f;
 `;
 
+const ItemWrapper = styled.View`
+  height: 80px;
+  width: 100%;
+  margin-bottom: 10px;
+  flex-direction: row;
+  align-items: center;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
+`;
 const ItemName = styled.Text`
-  width: 68px;
   height: 36px;
+  width: 300px;
   font-family: Nunito;
   font-size: 24px;
   font-weight: 300;
   line-height: 36px;
   color: #656565;
+  margin-left: 30px;
 `;
 
 const ItemValue = styled.Text`
-  width: 118px;
   height: 36px;
   font-family: Nunito;
   font-size: 26.7px;
@@ -66,14 +75,6 @@ const ItemValue = styled.Text`
   line-height: 36px;
   text-align: right;
   color: #656565;
-`;
-
-const ItemWrapper = styled.View`
-  align-items: center;
-  flex-direction: row;
-  height: 96px;
-  background-color: #eaeaea;
-  justify-content: flex-end;
 `;
 
 const MENU_ITEMS = [
@@ -143,7 +144,7 @@ function AddDishModal({isVisible, onClose, dish}) {
           </ScrollView>
           <SubTotalWrapper>
             <Subtotal>Subtotal</Subtotal>
-            <Subtotal>R$ 53,00</Subtotal>`{{}}`
+            <Subtotal>R$ 53,00</Subtotal>
           </SubTotalWrapper>
         </View>
         <View style={{flex: 1, borderRadius: 50}}>
@@ -153,8 +154,9 @@ function AddDishModal({isVisible, onClose, dish}) {
           <ScrollView>
             {ITEMS.map(item => (
               <ItemWrapper key={item.id}>
-                <ItemName style={{fontSize: 20}}>{ item.name }</ItemName>
-                <ItemValue> + R${ item.value }</ItemValue>
+                <CheckBox />
+                <ItemName>{item.name}</ItemName>
+                <ItemValue> + R$ {item.value}</ItemValue>
               </ItemWrapper>
             ))}
           </ScrollView>
@@ -165,6 +167,4 @@ function AddDishModal({isVisible, onClose, dish}) {
   );
 }
 
-''
-
-export default AddDishModal;''''''''''
+export default AddDishModal;

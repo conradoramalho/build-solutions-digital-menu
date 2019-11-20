@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
-    "install:android": "react-native run-android",
     "test": "jest"
   },
   "dependencies": {
