@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Wrapper = styled.TouchableOpacity`
   padding-left: 40px;
   padding-right: 40px;
-  height: 80px;
+  height: 60px;
   border-radius: 9px;
   background-color: #e12537;
 `;
