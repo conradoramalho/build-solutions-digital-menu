@@ -6,6 +6,8 @@ import DishCard from '../../components/DishCard/DishCard';
 import DishDetailsModal from './Dish/DishDetailsModal';
 import AddDishModal from './Dish/AddDishModal/AddDishModal';
 
+import Cart from '../Cart/Cart';
+
 const Wrapper = styled.View`
   flex-direction: row;
 `;
@@ -62,11 +64,16 @@ function DishesList({navigation}) {
         dish={dishModalItem}
       />
 
-      <AddDishModal
+      {/* <AddDishModal
         isVisible={!!addDishModalItem.id}
         onClose={() => setAddDishModalItem({})}
         dish={addDishModalItem}
       />
+ */}
+      <Cart
+        isVisible={!!addDishModalItem.id}
+        onClose={() => setAddDishModalItem({})}
+        dish={addDishModalItem}></Cart>
     </>
   );
 }
