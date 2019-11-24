@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {Text, View, Dimensions} from 'react-native';
 import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
 import {HamburguerDetails} from '../../assets/images';
@@ -7,9 +7,11 @@ import Button from '../../components/Button/Button';
 import ClickIcon from '../../assets/icons/icon-clique.svg';
 import TextBallon from '../../assets/icons/text-ballon.svg';
 
+const {height} = Dimensions.get('window');
+
 const Wrapper = styled.View`
   width: 394.7px;
-  height: 800px;
+  height: ${height};
   background-color: #ffffff;
   align-self: flex-end;
 `;
@@ -51,6 +53,37 @@ const Send = styled.Text`
   margin: auto;
 `;
 
+const HeaderWrapper = styled.View`
+  width: 394.7px;
+  height: 96px;
+  background-color: #fefefe;
+  padding: 32px;
+`;
+
+const HeaderText = styled.Text`
+  width: 120px;
+  height: 37.3px;
+  font-family: Quicksand;
+  font-size: 28px;
+  font-weight: 600;
+  color: #d93645;
+`;
+
+const ItemsWrapper = styled.ScrollView`
+  height: 500px;
+  background-color: red;
+`;
+
+const TotalWrapper = styled.ScrollView`
+  height: 70px;
+  background-color: blue;
+`;
+
+const ButtonWrapper = styled.ScrollView`
+  height: 130px;
+  background-color: yellow;
+`;
+
 function Cart({isVisible, onClose, dish}) {
   return (
     <Modal
@@ -65,13 +98,14 @@ function Cart({isVisible, onClose, dish}) {
         <Send>Clique aqui para enviar o pedido</Send>
       </SendWrapper>
       <Wrapper>
-        <Text>PEDIDOS</Text>
-        <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
-        <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
-        <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
-        <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
-        <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
-        <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
+        <HeaderWrapper>
+          <HeaderText>PEDIDOS</HeaderText>
+        </HeaderWrapper>
+        <ItemsWrapper />
+        <TotalWrapper />
+        <ButtonWrapper>
+          <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
+        </ButtonWrapper>
       </Wrapper>
     </Modal>
   );
