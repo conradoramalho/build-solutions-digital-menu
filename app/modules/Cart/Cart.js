@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 import {HamburguerDetails} from '../../assets/images';
 import Button from '../../components/Button/Button';
 import ClickIcon from '../../assets/icons/icon-clique.svg';
+import TextBallon from '../../assets/icons/text-ballon.svg';
 
 const Wrapper = styled.View`
   width: 394.7px;
@@ -28,14 +29,26 @@ const ClickHere = styled.Text`
   color: #ffffff;
 `;
 
+const SendWrapper = styled.View`
+  flex-direction: row;
+  position: absolute;
+  right: 400;
+  bottom: 0;
+  width: 329.3px;
+  height: 109.7px;
+`;
+
 const Send = styled.Text`
-  width: 233.3px;
-  height: 77.3px;
+  width: 300px;
+  height: 80px;
   font-family: Nunito;
   font-size: 31px;
   font-weight: 600;
   text-align: center;
   color: #515151;
+  position: absolute;
+  top: 10;
+  margin: auto;
 `;
 
 function Cart({isVisible, onClose, dish}) {
@@ -47,9 +60,10 @@ function Cart({isVisible, onClose, dish}) {
         <ClickIcon />
         <ClickHere>Clique aqui para voltar</ClickHere>
       </ClickWrapper>
-      <View>
+      <SendWrapper>
+        <TextBallon />
         <Send>Clique aqui para enviar o pedido</Send>
-      </View>
+      </SendWrapper>
       <Wrapper>
         <Text>PEDIDOS</Text>
         <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
