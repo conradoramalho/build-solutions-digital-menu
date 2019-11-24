@@ -71,17 +71,39 @@ const HeaderText = styled.Text`
 
 const ItemsWrapper = styled.ScrollView`
   height: 500px;
-  background-color: red;
 `;
 
-const TotalWrapper = styled.ScrollView`
+const TotalWrapper = styled.View`
   height: 70px;
-  background-color: blue;
+  flex-direction: row;
+  padding: 16px 0 0 38px;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
+  border-top-width: 1px;
+  border-top-color: #bfbfbf;
 `;
 
-const ButtonWrapper = styled.ScrollView`
+const TotalText = styled.Text`
+  width: 128px;
+  height: 37.3px;
+  font-family: Nunito;
+  font-size: 24px;
+  color: #5b5a5a;
+  margin-right: 80px;
+`;
+
+const TotalValueText = styled.Text`
+  width: 128px;
+  height: 37.3px;
+  font-family: Nunito;
+  font-size: 24px;
+  text-align: right;
+  color: #5b5a5a;
+`;
+
+const ButtonWrapper = styled.View`
   height: 130px;
-  background-color: yellow;
+  padding: 22px 50px 0;
 `;
 
 function Cart({isVisible, onClose, dish}) {
@@ -102,9 +124,12 @@ function Cart({isVisible, onClose, dish}) {
           <HeaderText>PEDIDOS</HeaderText>
         </HeaderWrapper>
         <ItemsWrapper />
-        <TotalWrapper />
+        <TotalWrapper>
+          <TotalText>Subtotal</TotalText>
+          <TotalValueText>R$ 73,00</TotalValueText>
+        </TotalWrapper>
         <ButtonWrapper>
-          <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
+          <Button title="ENVIAR PEDIDO" onPress={onClose} />
         </ButtonWrapper>
       </Wrapper>
     </Modal>
