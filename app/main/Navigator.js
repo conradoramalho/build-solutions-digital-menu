@@ -12,6 +12,7 @@ const defaultHeader = {
 Screens.DishesList.navigationOptions = defaultHeader;
 Screens.Home.navigationOptions = defaultHeader;
 Screens.Deals.navigationOptions = defaultHeader;
+Screens.Account.navigationOptions = defaultHeader;
 
 const RootStack = createStackNavigator(
   {
@@ -30,9 +31,12 @@ const RootStack = createStackNavigator(
     Highlights: {
       screen: Screens.Highlights,
     },
+    Account: {
+      screen: Screens.Account,
+    },
   },
   {
-    initialRouteName: 'DishesList',
+    initialRouteName: 'Account',
   }
 );
 
