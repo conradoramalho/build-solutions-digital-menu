@@ -60,6 +60,8 @@ const HeaderWrapper = styled.View`
   height: 96px;
   background-color: #fefefe;
   padding: 32px;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
 `;
 
 const HeaderText = styled.Text`
@@ -116,6 +118,36 @@ const ITEMS = [
   },
   {
     id: 2,
+    name: 'Porção bolinha de queijo',
+    value: '20,00',
+  },
+  {
+    id: 3,
+    name: 'Cream Cheese Bacon Rib',
+    value: '53,00',
+  },
+  {
+    id: 4,
+    name: 'Porção bolinha de queijo',
+    value: '20,00',
+  },
+  {
+    id: 5,
+    name: 'Cream Cheese Bacon Rib',
+    value: '53,00',
+  },
+  {
+    id: 6,
+    name: 'Porção bolinha de queijo',
+    value: '20,00',
+  },
+  {
+    id: 7,
+    name: 'Cream Cheese Bacon Rib',
+    value: '53,00',
+  },
+  {
+    id: 8,
     name: 'Porção bolinha de queijo',
     value: '20,00',
   },
