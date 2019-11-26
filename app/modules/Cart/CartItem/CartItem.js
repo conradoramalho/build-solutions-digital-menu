@@ -1,15 +1,28 @@
 import React from 'react';
 import {HamburguerDetails} from '../../../assets/images';
 import styled from 'styled-components/native';
+import DeleteIcon from '../../../assets/icons/delete-icon.svg';
+import EditIcon from '../../../assets/icons/edit-icon.svg';
 
 const Wrapper = styled.View`
   flex-direction: row;
   padding: 20px;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
 `;
 
 const InfoWrapper = styled.View`
   width: 250px;
   margin-right: 30px;
+`;
+
+const Container = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+const IconsWrapper = styled.View`
+  flex-direction: row;
 `;
 
 const Name = styled.Text`
@@ -18,11 +31,13 @@ const Name = styled.Text`
   font-family: Nunito;
   font-size: 23px;
   color: #6f6f6f;
+  margin-bottom: 26px;
 `;
 
 const Value = styled.Text`
-  width: 96px;
+  width: 100px;
   height: 37.3px;
+  margin-right: 44px;
   font-family: Nunito;
   font-size: 23px;
   font-weight: 300;
@@ -39,7 +54,13 @@ function CartItem({item}) {
     <Wrapper>
       <InfoWrapper>
         <Name>{item.name}</Name>
-        <Value>{item.value}</Value>
+        <Container>
+          <Value>{item.value}</Value>
+          <IconsWrapper>
+            <DeleteIcon style={{marginRight: 30}} />
+            <EditIcon />
+          </IconsWrapper>
+        </Container>
       </InfoWrapper>
       <Image source={HamburguerDetails} />
     </Wrapper>
