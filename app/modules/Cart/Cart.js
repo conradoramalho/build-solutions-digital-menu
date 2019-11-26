@@ -4,6 +4,8 @@ import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
 import {HamburguerDetails} from '../../assets/images';
 import Button from '../../components/Button/Button';
+import CartItem from './CartItem/CartItem';
+
 import ClickIcon from '../../assets/icons/icon-clique.svg';
 import TextBallon from '../../assets/icons/text-ballon.svg';
 
@@ -106,6 +108,19 @@ const ButtonWrapper = styled.View`
   padding: 22px 50px 0;
 `;
 
+const ITEMS = [
+  {
+    id: 1,
+    name: 'Cream Cheese Bacon Rib',
+    value: '53,00',
+  },
+  {
+    id: 2,
+    name: 'Porção bolinha de queijo',
+    value: '20,00',
+  },
+];
+
 function Cart({isVisible, onClose, dish}) {
   return (
     <Modal
@@ -123,7 +138,11 @@ function Cart({isVisible, onClose, dish}) {
         <HeaderWrapper>
           <HeaderText>PEDIDOS</HeaderText>
         </HeaderWrapper>
-        <ItemsWrapper />
+        <ItemsWrapper>
+          {ITEMS.map(x => (
+            <CartItem key={x.id} item={x} />
+          ))}
+        </ItemsWrapper>
         <TotalWrapper>
           <TotalText>Subtotal</TotalText>
           <TotalValueText>R$ 73,00</TotalValueText>
