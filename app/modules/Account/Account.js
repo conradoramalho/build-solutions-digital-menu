@@ -21,15 +21,14 @@ const Label = styled.Text`
 const Main = styled.View`
   width: 1280px;
   height: 510px;
-  background-color: #f9f9f9;
-  background-color: green;
 `;
 
 const Bottom = styled.View`
   width: 1280px;
   height: 128px;
   background-color: #f9f9f9;
-  background-color: blue;
+  border-top-width: 1px;
+  border-top-color: #bfbfbf;
 `;
 
 function Account() {
@@ -41,9 +40,7 @@ function Account() {
       <Main>
         <Label>Mesa 12</Label>
       </Main>
-      <Bottom>
-        <Label>Mesa 12</Label>
-      </Bottom>
+      <Bottom></Bottom>
     </View>
   );
 }
