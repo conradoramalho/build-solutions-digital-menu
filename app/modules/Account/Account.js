@@ -4,25 +4,15 @@ import styled from 'styled-components/native';
 import Button from '../../components/Button/Button';
 
 const Header = styled.View`
-  width: 1280px;
   height: 65px;
-  background-color: red;
-`;
-
-const Label = styled.Text`
-  width: 130.7px;
-  height: 36px;
-  font-family: Quicksand;
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-  color: #d93645;
+  flex-direction: row;
+  padding: 14px 0 14px 24px;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
 `;
 
 const Main = styled.View`
-  width: 1280px;
   height: 485px;
-  flex-direction: row;
 `;
 
 const Bottom = styled.View`
@@ -114,7 +104,7 @@ const Finish = styled(Button)`
 `;
 
 const Command = styled.Text`
-  width: 130.7px;
+  width: 181.3px;
   height: 36px;
   font-family: Quicksand;
   font-size: 24px;
@@ -126,15 +116,13 @@ function Account() {
   return (
     <View>
       <Header>
-        <Command>Mesa 12</Command>
+        <Command>Comanda 1</Command>
+        <Command>Comanda 2</Command>
+        <Command>Comanda 3</Command>
+        <Command>Comanda 4</Command>
+        <Command active>Comanda 05</Command>
       </Header>
-      <Main>
-        <Command>Mesa 12</Command>
-        <Command>Mesa 12</Command>
-        <Command>Mesa 12</Command>
-        <Command>Mesa 12</Command>
-        <Command active>Mesa 12</Command>
-      </Main>
+      <Main></Main>
       <Bottom>
         <WrapperBottom>
           <WrapperTextBottom>

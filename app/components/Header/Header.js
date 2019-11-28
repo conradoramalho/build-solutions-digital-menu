@@ -11,6 +11,8 @@ const Wrapper = styled.View`
   height: 72px;
   background-color: #fefefe;
   align-items: center;
+  border-bottom-width: 1px;
+  border-bottom-color: #bfbfbf;
 `;
 
 const LogoWrapper = styled.Image`
