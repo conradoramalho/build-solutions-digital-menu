@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styled from 'styled-components/native';
 import Button from '../../components/Button/Button';
+import ItemsList from './ItemsList/ItemsList';
 
 const Header = styled.View`
   height: 65px;
@@ -122,7 +123,9 @@ function Account() {
         <Command>Comanda 4</Command>
         <Command active>Comanda 05</Command>
       </Header>
-      <Main></Main>
+      <Main>
+        <ItemsList></ItemsList>
+      </Main>
       <Bottom>
         <WrapperBottom>
           <WrapperTextBottom>
