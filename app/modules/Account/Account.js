@@ -14,6 +14,7 @@ const Header = styled.View`
 
 const Main = styled.View`
   height: 485px;
+  padding: 20px 64px;
 `;
 
 const Bottom = styled.View`

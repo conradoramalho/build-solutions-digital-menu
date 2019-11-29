@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components/native';
 
-const Wrapper = styled.View``;
+const Wrapper = styled.View`
+  padding-bottom: 80px;
+`;
 
 const Header = styled.View`
   flex-direction: row;
+  margin-bottom: 25px;
 `;
 
 const HeaderText = styled.Text`
@@ -17,6 +20,7 @@ const HeaderText = styled.Text`
 `;
 
 const SecondHeaderText = styled(HeaderText)`
+  width: 200px;
   text-align: right;
 `;
 
@@ -24,10 +28,11 @@ const Scroll = styled.ScrollView``;
 
 const ItemWrapper = styled.View`
   flex-direction: row;
+  margin-bottom: 15px;
 `;
 
 const Quantity = styled.Text`
-  width: 78.7px;
+  width: 100px;
   height: 37.3px;
   font-family: Nunito;
   font-size: 26px;
@@ -36,7 +41,7 @@ const Quantity = styled.Text`
 `;
 
 const Name = styled.Text`
-  width: 600px;
+  width: 500px;
   height: 37.3px;
   font-family: Nunito;
   font-size: 26px;
@@ -44,7 +49,7 @@ const Name = styled.Text`
   color: #6f6f6f;
 `;
 const UnitPrice = styled.Text`
-  width: 100px;
+  width: 200px;
   height: 37.3px;
   font-family: Nunito;
   font-size: 26px;
@@ -54,7 +59,7 @@ const UnitPrice = styled.Text`
 `;
 
 const TotalPrice = styled.Text`
-  width: 100px;
+  width: 200px;
   font-family: Nunito;
   font-size: 26px;
   font-weight: 300;
@@ -112,6 +117,56 @@ const ITEMS = [
     unityPrice: '4,00',
     totalPrice: '24,00',
   },
+
+  {
+    id: 1,
+    quantity: 2,
+    name: 'Porção bolinha queijo',
+    unityPrice: '20,00',
+    totalPrice: '40,00',
+  },
+  {
+    id: 2,
+    quantity: 5,
+    name: 'Espetinho frango',
+    unityPrice: '5,00',
+    totalPrice: '25,00',
+  },
+  {
+    id: 3,
+    quantity: 2,
+    name: 'Suco de laranja',
+    unityPrice: '9,00',
+    totalPrice: '18,00',
+  },
+  {
+    id: 4,
+    quantity: 4,
+    name: 'Água s/ gás',
+    unityPrice: '2,50',
+    totalPrice: '10,00',
+  },
+  {
+    id: 5,
+    quantity: 1,
+    name: 'Pizza Calabresa',
+    unityPrice: '53,00',
+    totalPrice: '53,00',
+  },
+  {
+    id: 6,
+    quantity: 1,
+    name: 'Pizza Brócolis',
+    unityPrice: '65,00',
+    totalPrice: '65,00',
+  },
+  {
+    id: 7,
+    quantity: 6,
+    name: 'Coca-cola lata',
+    unityPrice: '4,00',
+    totalPrice: '24,00',
+  },
 ];
 
 const FirstColum = styled.View`
@@ -119,7 +174,7 @@ const FirstColum = styled.View`
 `;
 
 const SecondColum = styled.View`
-  width: 600px;
+  width: 500px;
 `;
 
 const ThirdColum = styled.View`
@@ -127,7 +182,7 @@ const ThirdColum = styled.View`
 `;
 
 const FourthColum = styled.View`
-  width: 100px;
+  width: 200px;
 `;
 
 function ItemsList() {
@@ -157,10 +212,10 @@ function ItemsList() {
               <Name>{item.name}</Name>
             </SecondColum>
             <ThirdColum>
-              <UnitPrice>{item.unityPrice}</UnitPrice>
+              <UnitPrice>R$ {item.unityPrice}</UnitPrice>
             </ThirdColum>
             <FourthColum>
-              <TotalPrice>{item.totalPrice}</TotalPrice>
+              <TotalPrice>R$ {item.totalPrice}</TotalPrice>
             </FourthColum>
           </ItemWrapper>
         ))}
