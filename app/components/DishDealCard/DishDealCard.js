@@ -25,7 +25,7 @@ const Container = styled.View`
   flex-direction: row;
   background-color: #fff;
   position: relative;
-  padding: 10px 0 0 10px;
+  padding: 10px 0 10px 10px;
 `;
 
 const Title = styled.View`
@@ -54,14 +54,13 @@ const DishPrice = styled.Text`
 `;
 
 const BTN = styled.TouchableOpacity`
-  align-self: flex-end;
   width: 74.7px;
   height: 74.7px;
-  background-color: blue;
-  font-size: 21;
+  margin-bottom: -10px;
   font-family: Nunito-Bold;
   color: #6f6f6f;
   position: relative;
+  align-self: flex-end;
 `;
 
 const Triangulo = styled.TouchableOpacity`
@@ -77,7 +76,14 @@ const Triangulo = styled.TouchableOpacity`
 `;
 
 const Plus = styled.Text`
+  width: 28px;
+  height: 28px;
   font-size: 48px;
+  line-height: 42px;
+  text-align: center;
+  align-self: flex-end;
+  margin: auto 10px 10px;
+  color: #fff;
 `;
 
 const Dish = {
