@@ -36,7 +36,7 @@ const RootStack = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'Account',
+    initialRouteName: 'Deals',
   }
 );
 

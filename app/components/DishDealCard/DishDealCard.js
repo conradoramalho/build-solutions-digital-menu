@@ -5,45 +5,46 @@ import Button from '../Button/Button';
 import {Hamburguer} from '../../assets/images';
 
 const Wrapper = styled.View`
-  height: 300;
-  width: 250px;
-  flex-basis: 0;
-  flex-grow: 1;
-
+  width: 280px;
   flex-direction: column;
-  padding: 20px 30px;
-  position: relative;
-
-  border-bottom-width: 1px;
+  margin: 0 40px 40px 0;
 `;
 
 const ImageWrapper = styled.View`
-  width: 300;
-  height: 100;
+  width: 100.7px;
+  height: 162.7px;
 `;
 
 const Image = styled.Image`
-  height: 100%;
-  width: 100%;
+  width: 280px;
+  height: 160px;
 `;
 
 const Container = styled.View`
-  flex: 1;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
+  background-color: #fff;
   position: relative;
+  padding: 10px 0 0 10px;
 `;
 
 const Title = styled.View`
-  height: 30;
-  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 15;
 `;
 
 const DishName = styled.Text`
+  font-family: Nunito;
+  font-size: 26px;
+  font-weight: 600;
   font-size: 21;
   color: #6f6f6f;
   font-family: Nunito-Bold;
+`;
+
+const DishOldPrice = styled.Text`
+  font-size: 18;
+  color: #e12537;
+  text-decoration: line-through;
 `;
 
 const DishPrice = styled.Text`
@@ -52,14 +53,36 @@ const DishPrice = styled.Text`
   color: #6f6f6f;
 `;
 
-const Buttons = styled.View`
-  height: 50;
-  flex-direction: row;
-  justify-content: space-between;
+const BTN = styled.TouchableOpacity`
+  align-self: flex-end;
+  width: 74.7px;
+  height: 74.7px;
+  background-color: blue;
+  font-size: 21;
+  font-family: Nunito-Bold;
+  color: #6f6f6f;
+  position: relative;
+`;
+
+const Triangulo = styled.TouchableOpacity`
+  width: 0;
+  height: 0;
+  border-bottom-width: 74.7px;
+  border-left-width: 74.7px;
+  border-bottom-color: red;
+  border-left-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+`;
+
+const Plus = styled.Text`
+  font-size: 48px;
 `;
 
 const Dish = {
   title: 'Gran Prime Burguer',
+  oldPrice: 'R$ 52,00',
   price: 'R$ 37,00',
   description:
     'Molho de tomate fresco, calabresa especial fatiada, rodelas de cebola, orégano e azeitonas pretas',
@@ -74,14 +97,13 @@ function DishDealCard() {
       <Container>
         <Title>
           <DishName>{Dish.title}</DishName>
+          <DishOldPrice>{Dish.oldPrice}</DishOldPrice>
           <DishPrice>{Dish.price}</DishPrice>
         </Title>
-        <Buttons>
-          <Button
-            title="Adicionar"
-            onPress={() => setIsAddDishModalVisible(true)}
-          />
-        </Buttons>
+        <BTN>
+          <Triangulo />
+          <Plus>+</Plus>
+        </BTN>
       </Container>
     </Wrapper>
   );
