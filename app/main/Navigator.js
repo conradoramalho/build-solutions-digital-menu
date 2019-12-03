@@ -5,14 +5,10 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Header from '../components/Header/Header';
 import * as Screens from '../modules';
 
-const defaultHeader = {
-  header: <Header />,
-};
-
-Screens.DishesList.navigationOptions = defaultHeader;
-Screens.Home.navigationOptions = defaultHeader;
-Screens.Deals.navigationOptions = defaultHeader;
-Screens.Account.navigationOptions = defaultHeader;
+// Screens.DishesList.navigationOptions = defaultHeader;
+// Screens.Home.navigationOptions = defaultHeader;
+// Screens.Deals.navigationOptions = defaultHeader;
+// Screens.Account.navigationOptions = defaultHeader;
 
 const RootStack = createStackNavigator(
   {
@@ -37,6 +33,9 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Deals',
+    defaultNavigationOptions: {
+      header: <Header />,
+    },
   }
 );
 

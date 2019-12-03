@@ -1,5 +1,6 @@
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import {View, Text} from 'react-native';
+import {ThemeProvider} from 'styled-components';
 
 import Navigator from './Navigator';
 import theme from '../styles/theme';
