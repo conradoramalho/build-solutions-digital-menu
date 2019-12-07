@@ -5,11 +5,6 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Header from '../components/Header/Header';
 import * as Screens from '../modules';
 
-// Screens.DishesList.navigationOptions = defaultHeader;
-// Screens.Home.navigationOptions = defaultHeader;
-// Screens.Deals.navigationOptions = defaultHeader;
-// Screens.Account.navigationOptions = defaultHeader;
-
 const RootStack = createStackNavigator(
   {
     Home: {
@@ -32,7 +27,7 @@ const RootStack = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'Deals',
+    initialRouteName: 'About',
     defaultNavigationOptions: {
       header: <Header />,
     },
