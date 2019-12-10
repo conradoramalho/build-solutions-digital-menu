@@ -1,6 +1,7 @@
 import React from 'react';
-import {FlatList, Text} from 'react-native';
-import Menu from './Menu/Menu';
+import {FlatList} from 'react-native';
+import Menu from '../Home/Menu/Menu';
+
 import styled from 'styled-components/native';
 import DishDealCard from '../../components/DishDealCard/DishDealCard';
 

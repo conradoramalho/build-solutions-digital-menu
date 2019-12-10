@@ -19,15 +19,12 @@ const RootStack = createStackNavigator(
     Deals: {
       screen: Screens.Deals,
     },
-    Highlights: {
-      screen: Screens.Highlights,
-    },
     Account: {
       screen: Screens.Account,
     },
   },
   {
-    initialRouteName: 'About',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       header: <Header />,
     },
