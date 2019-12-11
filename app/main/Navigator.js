@@ -22,9 +22,12 @@ const RootStack = createStackNavigator(
     Account: {
       screen: Screens.Account,
     },
+    Evaluation: {
+      screen: Screens.Evaluation,
+    },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Evaluation',
     defaultNavigationOptions: {
       header: <Header />,
     },
