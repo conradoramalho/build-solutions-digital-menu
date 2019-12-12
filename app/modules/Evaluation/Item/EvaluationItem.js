@@ -10,8 +10,13 @@ import Evaluation1Active from '../../../assets/icons/evaluation-2-active.svg';
 import Evaluation2Active from '../../../assets/icons/evaluation-2-active.svg';
 import Evaluation3Active from '../../../assets/icons/evaluation-3-active.svg';
 import Evaluation4Active from '../../../assets/icons/evaluation-4-active.svg';
+import Evaluation5Active from '../../../assets/icons/evaluation-5-active.svg';
 
-const Wrapper = styled.View``;
+const Wrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 50px;
+`;
 
 const Text = styled.Text`
   width: 198.7px;
@@ -20,21 +25,68 @@ const Text = styled.Text`
   font-size: 28px;
   font-weight: 600;
   color: #6f6f6f;
+  margin-right: 80px;
 `;
 
-function EvaluationItem({item}) {
+const WrapperIcon = styled.View`
+  width: 90px;
+  height: 90px;
+  margin-right: 50px;
+`;
+
+const Button = styled.TouchableOpacity``;
+
+function EvaluationItem({item, active, onChange}) {
   return (
     <Wrapper>
       <Text>{item.name}</Text>
-      <Evaluation1Inactive></Evaluation1Inactive>
-      <Evaluation2Inactive></Evaluation2Inactive>
-      <Evaluation3Inactive></Evaluation3Inactive>
-      <Evaluation4Inactive></Evaluation4Inactive>
-      <Evaluation5Inactive></Evaluation5Inactive>
-      <Evaluation1Active></Evaluation1Active>
-      <Evaluation2Active></Evaluation2Active>
-      <Evaluation3Active></Evaluation3Active>
-      <Evaluation4Active></Evaluation4Active>
+      <WrapperIcon>
+        <Button onPress={() => onChange(item.id, 1)}>
+          {active === 1 ? (
+            <Evaluation1Active></Evaluation1Active>
+          ) : (
+            <Evaluation1Inactive></Evaluation1Inactive>
+          )}
+        </Button>
+      </WrapperIcon>
+
+      <WrapperIcon>
+        <Button onPress={() => onChange(item.id, 2)}>
+          {active === 2 ? (
+            <Evaluation2Active></Evaluation2Active>
+          ) : (
+            <Evaluation2Inactive></Evaluation2Inactive>
+          )}
+        </Button>
+      </WrapperIcon>
+      <WrapperIcon>
+        <Button onPress={() => onChange(item.id, 3)}>
+          {active === 3 ? (
+            <Evaluation3Active></Evaluation3Active>
+          ) : (
+            <Evaluation3Inactive></Evaluation3Inactive>
+          )}
+        </Button>
+      </WrapperIcon>
+      <WrapperIcon>
+        <Button onPress={() => onChange(item.id, 4)}>
+          {active === 4 ? (
+            <Evaluation4Active></Evaluation4Active>
+          ) : (
+            <Evaluation4Inactive></Evaluation4Inactive>
+          )}
+        </Button>
+      </WrapperIcon>
+
+      <WrapperIcon>
+        <Button onPress={() => onChange(item.id, 5)}>
+          {active === 5 ? (
+            <Evaluation5Active></Evaluation5Active>
+          ) : (
+            <Evaluation5Inactive></Evaluation5Inactive>
+          )}
+        </Button>
+      </WrapperIcon>
     </Wrapper>
   );
 }

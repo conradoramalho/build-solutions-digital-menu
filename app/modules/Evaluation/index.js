@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components/native';
 import EvaluationItem from './Item/EvaluationItem';
 
-const Wrapper = styled.View``;
+const Wrapper = styled.View`
+  padding: 20px 50px;
+`;
 
 const Title = styled.Text`
   width: 770.7px;
@@ -11,6 +13,7 @@ const Title = styled.Text`
   font-size: 26px;
   line-height: 36px;
   color: #6f6f6f;
+  margin-bottom: 50px;
 `;
 
 const OPTIONS = [
@@ -33,13 +36,22 @@ const OPTIONS = [
 ];
 
 function Evaluation() {
+  const [active, setActive] = useState({});
+
   return (
     <Wrapper>
       <Title>
-        Qual a sua opnião sobre esses aspectos do nosso estabelecimento?
+        Qual a sua opinião sobre esses aspectos do nosso estabelecimento?
       </Title>
       {OPTIONS.map(item => (
-        <EvaluationItem key={item.id} item={item} />
+        <EvaluationItem
+          key={item.id}
+          item={item}
+          active={active[item.id]}
+          onChange={(id, active) =>
+            setActive(state => ({...state, [id]: active}))
+          }
+        />
       ))}
     </Wrapper>
   );
