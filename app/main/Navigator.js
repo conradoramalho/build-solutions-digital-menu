@@ -27,7 +27,7 @@ const RootStack = createStackNavigator(
     },
   },
   {
-    initialRouteName: 'Evaluation',
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
       header: <Header />,
     },

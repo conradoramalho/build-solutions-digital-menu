@@ -41,7 +41,7 @@ const Search = styled.TextInput`
   margin-right: 30px;
 `;
 
-const WrapperBtns = styled.View`
+const WrapperBtns = styled.TouchableOpacity`
   flex: 2;
   flex-direction: row;
   align-items: center;
@@ -78,21 +78,21 @@ class LogoTitle extends React.Component {
           placeholder="Buscar"
         />
 
-        <WrapperBtns>
+        <WrapperBtns onPress={() => console.log('call waiter')}>
           <Icon>
             <WaiterIcon />
           </Icon>
           <CallWaiter>Garçom</CallWaiter>
         </WrapperBtns>
 
-        <WrapperBtns>
+        <WrapperBtns onPress={() => console.log('To orders')}>
           <Icon>
             <OrdersIcon />
           </Icon>
           <MyOrders>Pedidos</MyOrders>
         </WrapperBtns>
 
-        <WrapperBtns>
+        <WrapperBtns onPress={() => console.log('to account')}>
           <Icon>
             <AccountIcon />
           </Icon>
