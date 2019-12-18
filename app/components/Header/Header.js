@@ -1,6 +1,7 @@
 import React from 'react';
-import {TextInput, View} from 'react-native';
 import styled from 'styled-components/native';
+import {withNavigation} from 'react-navigation';
+
 import {Logo} from '../../assets/images';
 import WaiterIcon from '../../assets/icon_garcom.svg';
 import OrdersIcon from '../../assets/icon_pedidos.svg';
@@ -15,11 +16,13 @@ const Wrapper = styled.View`
   border-bottom-color: #bfbfbf;
 `;
 
-const LogoWrapper = styled.Image`
+const LogoWrapper = styled.TouchableOpacity`
   width: 110px;
   height: 72px;
   margin-right: 30px;
 `;
+
+const LogoImage = styled.Image``;
 
 const TableNumber = styled.Text`
   width: 35;
@@ -65,42 +68,42 @@ const MyAccount = styled.Text`
   font-size: 20px;
 `;
 
-class LogoTitle extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <LogoWrapper source={Logo} />
-        <TableNumber>04</TableNumber>
-        <Search
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={text => console.log(text)}
-          value={10}
-          placeholder="Buscar"
-        />
+function LogoTitle({navigation: {navigate}}) {
+  return (
+    <Wrapper>
+      <LogoWrapper onPress={() => navigate('Home')}>
+        <LogoImage source={Logo} />
+      </LogoWrapper>
+      <TableNumber>04</TableNumber>
+      <Search
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={text => console.log(text)}
+        value={10}
+        placeholder="Buscar"
+      />
 
-        <WrapperBtns onPress={() => console.log('call waiter')}>
-          <Icon>
-            <WaiterIcon />
-          </Icon>
-          <CallWaiter>Garçom</CallWaiter>
-        </WrapperBtns>
+      <WrapperBtns onPress={() => console.log('call waiter')}>
+        <Icon>
+          <WaiterIcon />
+        </Icon>
+        <CallWaiter>Garçom</CallWaiter>
+      </WrapperBtns>
 
-        <WrapperBtns onPress={() => console.log('To orders')}>
-          <Icon>
-            <OrdersIcon />
-          </Icon>
-          <MyOrders>Pedidos</MyOrders>
-        </WrapperBtns>
+      <WrapperBtns onPress={() => console.log('To orders')}>
+        <Icon>
+          <OrdersIcon />
+        </Icon>
+        <MyOrders>Pedidos</MyOrders>
+      </WrapperBtns>
 
-        <WrapperBtns onPress={() => console.log('to account')}>
-          <Icon>
-            <AccountIcon />
-          </Icon>
-          <MyAccount>Minha Conta</MyAccount>
-        </WrapperBtns>
-      </Wrapper>
-    );
-  }
+      <WrapperBtns onPress={() => navigate('Account')}>
+        <Icon>
+          <AccountIcon />
+        </Icon>
+        <MyAccount>Minha Conta</MyAccount>
+      </WrapperBtns>
+    </Wrapper>
+  );
 }
 
-export default LogoTitle;
+export default withNavigation(LogoTitle);

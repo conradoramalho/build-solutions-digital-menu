@@ -44,7 +44,7 @@ function About({navigation}) {
   return (
     <Wrapper>
       <MenuWrapper>
-        <Menu navigate={navigation.navigate} />
+        <Menu navigate={navigation.navigate} active={4} />
       </MenuWrapper>
       <SlideWrapper>
         <Image source={AboutUs} />

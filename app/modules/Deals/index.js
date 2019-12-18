@@ -26,7 +26,7 @@ function DishesList({navigation}) {
   return (
     <Wrapper>
       <MenuWrapper>
-        <Menu navigate={navigation.navigate} />
+        <Menu navigate={navigation.navigate} active={3} />
       </MenuWrapper>
       <Container>
         <FlatList

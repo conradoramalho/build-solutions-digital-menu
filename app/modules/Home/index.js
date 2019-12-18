@@ -21,7 +21,7 @@ function HomeScreen({navigation}) {
   return (
     <Wrapper>
       <MenuWrapper>
-        <Menu navigate={navigation.navigate} />
+        <Menu navigate={navigation.navigate} active={2} />
       </MenuWrapper>
       <SlideWrapper>
         <Carousel />

@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-import {createAppContainer} from 'react-navigation'; // Version can be specified in package.json
+import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 import Header from '../components/Header/Header';
 import * as Screens from '../modules';
