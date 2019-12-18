@@ -8,11 +8,11 @@ const Wrapper = styled.View`
 `;
 
 const MenuWrapper = styled.View`
-  flex: 2;
+  width: 280px;
 `;
 
 const SlideWrapper = styled.View`
-  flex: 8;
+  width: 944px;
   margin: auto;
   flex-direction: column;
 `;

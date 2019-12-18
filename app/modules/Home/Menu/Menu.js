@@ -1,11 +1,12 @@
 import React from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 import styled from 'styled-components/native';
+import BuildLogo from '../../../assets/icons/build-logo.svg';
 
 import {START_MENU} from '../../../constants';
 
 const Wrapper = styled.View`
-  width: 336px;
+  width: 100%;
   background-color: #fefefe;
 `;
 
@@ -24,10 +25,32 @@ const ButtonText = styled.Text`
   color: #6f6f6f;
 `;
 
+const List = styled.FlatList`
+  margin-bottom: 270px;
+`;
+
+const BuildWrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+  padding: 25px;
+`;
+
+const BuildText = styled.Text`
+  font-family: Quicksand;
+  font-size: 20px;
+  color: #6f6f6f;
+  margin-right: 15px;
+`;
+
+const Logo = styled(BuildLogo)`
+  width: 160px;
+  height: 40px;
+`;
+
 function Menu({navigate, active}) {
   return (
     <Wrapper>
-      <FlatList
+      <List
         data={START_MENU}
         renderItem={({item}) => (
           <Button
@@ -38,6 +61,11 @@ function Menu({navigate, active}) {
         )}
         keyExtractor={item => item.id}
       />
+
+      <BuildWrapper>
+        <BuildText>Feito por</BuildText>
+        <Logo />
+      </BuildWrapper>
     </Wrapper>
   );
 }

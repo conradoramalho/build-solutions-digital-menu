@@ -14,7 +14,7 @@ const MenuWrapper = styled.View`
 `;
 
 const Container = styled.View`
-  width: 1000px;
+  width: 944px;
   background-color: #f7f7f7;
   flex-direction: row;
   padding: 40px 0 40px 40px;

@@ -14,11 +14,11 @@ const Image = styled.Image`
 `;
 
 const MenuWrapper = styled.View`
-  flex: 2;
+  width: 280px;
 `;
 
 const SlideWrapper = styled.View`
-  flex: 8;
+  width: 944px;
   margin: auto;
   padding: 25px 50px;
   background-color: #fafafa;
