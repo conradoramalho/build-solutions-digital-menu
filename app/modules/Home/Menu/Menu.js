@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView, FlatList} from 'react-native';
 import styled from 'styled-components/native';
 import BuildLogo from '../../../assets/icons/build-logo.svg';
+import BuildSolutionsModal from '../../../components/BuildSolutionsModal/BuildSolutionsModal';
 
 import {START_MENU} from '../../../constants';
 
@@ -29,7 +30,7 @@ const List = styled.FlatList`
   margin-bottom: 270px;
 `;
 
-const BuildWrapper = styled.View`
+const BuildWrapper = styled.TouchableOpacity`
   flex-direction: row;
   align-items: center;
   padding: 25px;
@@ -48,6 +49,8 @@ const Logo = styled(BuildLogo)`
 `;
 
 function Menu({navigate, active}) {
+  const [isBuildModalVisible, setIsBuildModalVisible] = useState(false);
+
   return (
     <Wrapper>
       <List
@@ -62,10 +65,15 @@ function Menu({navigate, active}) {
         keyExtractor={item => item.id}
       />
 
-      <BuildWrapper>
+      <BuildWrapper onPress={() => setIsBuildModalVisible(true)}>
         <BuildText>Feito por</BuildText>
         <Logo />
       </BuildWrapper>
+
+      <BuildSolutionsModal
+        isVisible={isBuildModalVisible}
+        onClose={() => setIsBuildModalVisible(false)}
+      />
     </Wrapper>
   );
 }
