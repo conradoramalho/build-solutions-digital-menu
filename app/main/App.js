@@ -1,14 +1,17 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import {ThemeProvider} from 'styled-components';
+import {Provider} from 'react-redux';
 
+import store from './Store';
 import Navigator from './Navigator';
 import theme from '../styles/theme';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Navigator />
+      <Provider store={store}>
+        <Navigator />
+      </Provider>
     </ThemeProvider>
   );
 }
