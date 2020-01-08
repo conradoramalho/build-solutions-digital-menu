@@ -1,10 +1,11 @@
-import {takeLatest, put, delay, all} from 'redux-saga/effects';
+import {takeLatest, put, all, call} from 'redux-saga/effects';
 import * as ACTIONS from '../actions/homeActions';
+import API from '../api';
 
 function* getHighlights() {
   try {
-    yield delay(2000);
-    yield put({type: ACTIONS.HIGHLIGHTS_SUCCESS, payload: 1865});
+    const {data} = yield call(API.getHighlights);
+    yield put({type: ACTIONS.HIGHLIGHTS_SUCCESS, payload: data});
   } catch (error) {
     yield put({type: ACTIONS.HIGHLIGHTS_FAILURE, payload: error});
   }

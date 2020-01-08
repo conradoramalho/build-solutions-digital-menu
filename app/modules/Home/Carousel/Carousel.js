@@ -1,8 +1,10 @@
-import React, {Component} from 'react';
-import {View, Text, Image, Dimensions} from 'react-native';
+import React, {useEffect} from 'react';
+import {Dimensions} from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import styled from 'styled-components/native';
 import {HamburguerHome} from '../../../assets/images';
+import {useSelector, useDispatch} from 'react-redux';
+import {getHighlights} from '../../../actions/homeActions';
 
 const {width: viewportWidth, height} = Dimensions.get('window');
 
@@ -45,24 +47,29 @@ const Subtitle = styled.Text`
 `;
 
 function HomeCarousel() {
+  const {highlights} = useSelector(({home}) => home);
+  console.log('highlights: ', highlights);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getHighlights());
+  }, []);
+
   const renderItem = ({item, index}) => {
     return (
       <Container>
         <TextContainer>
-          <Title>Cream Cheese Bacon Rib</Title>
-          <Subtitle>
-            Pão especial, hambúrguer artesanal de costela bovina 200g, cream
-            cheese Philadelphia, bacon em fatias, cebola caramelizada…
-          </Subtitle>
+          <Title>{item.title}</Title>
+          <Subtitle>{item.description}</Subtitle>
         </TextContainer>
-        <ImageWrapper source={HamburguerHome} />
+        <ImageWrapper source={{uri: `http://168.194.230.42:5600${item.img}`}} />
       </Container>
     );
   };
 
   return (
     <Carousel
-      data={DATA}
+      data={highlights}
       renderItem={renderItem}
       sliderWidth={1030}
       itemWidth={1030}

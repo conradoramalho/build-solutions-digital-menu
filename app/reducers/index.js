@@ -1,1 +1,1 @@
-export homeReducer from './homeReducer';
+export home from './homeReducer';
