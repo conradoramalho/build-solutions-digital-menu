@@ -1,14 +1,17 @@
-import React from 'react';
-import { SafeAreaView, TouchableOpacity, FlatList, Text } from 'react-native';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
+import {SafeAreaView, TouchableOpacity, FlatList, Text} from 'react-native';
 import styled from 'styled-components/native';
 
+import {getMainCategories} from '../../../actions/categoryActions';
+
 const MENU = [
-  { label: 'Aperitivos' },
-  { label: 'Pizzas' },
-  { label: 'Massas' },
-  { id: 1, label: 'Hamburguer' },
-  { label: 'Pratos Quentes' },
-  { label: 'Bebidas' },
+  {label: 'Aperitivos'},
+  {label: 'Pizzas'},
+  {label: 'Massas'},
+  {id: 1, label: 'Hamburguer'},
+  {label: 'Pratos Quentes'},
+  {label: 'Bebidas'},
 ];
 
 const Button = styled.TouchableOpacity`
@@ -26,13 +29,21 @@ const ButtonText = styled.Text`
   color: ${props => (props.active ? `#e12537` : '#6f6f6f')};
 `;
 
-function Menu({ navigate }) {
+function Menu({navigate}) {
+  const {mainCategory} = useSelector(({category}) => category);
+  console.log('mainCategory: ', mainCategory);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMainCategories());
+  }, []);
+
   return (
     <FlatList
-      data={MENU}
-      renderItem={({ item }) => (
+      data={mainCategory.list}
+      renderItem={({item}) => (
         <Button onPress={() => navigate('Home')} active={item.id === 1}>
-          <ButtonText active={item.id === 1}>{item.label}</ButtonText>
+          <ButtonText active={item.id === 1}>{item.name}</ButtonText>
         </Button>
       )}
       keyExtractor={item => item.id}

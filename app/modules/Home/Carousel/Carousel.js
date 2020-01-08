@@ -48,7 +48,6 @@ const Subtitle = styled.Text`
 
 function HomeCarousel() {
   const {highlights} = useSelector(({home}) => home);
-  console.log('highlights: ', highlights);
   const dispatch = useDispatch();
 
   useEffect(() => {
