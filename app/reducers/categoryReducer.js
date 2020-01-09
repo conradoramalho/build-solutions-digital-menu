@@ -5,6 +5,9 @@ const INITIAL_STATE = {
     isLoading: false,
     list: [],
   },
+  currentCategory: {
+    id: undefined,
+  },
 };
 
 function categoryReducer(state = INITIAL_STATE, action) {
@@ -33,6 +36,13 @@ function categoryReducer(state = INITIAL_STATE, action) {
           ...state.mainCategory,
           isLoading: false,
           list: [],
+        },
+      };
+    case actions.SET_CURRENT_CATEGORY:
+      return {
+        ...state,
+        currentCategory: {
+          id: action.payload,
         },
       };
     default:

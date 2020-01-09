@@ -1,18 +1,12 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import {SafeAreaView, TouchableOpacity, FlatList, Text} from 'react-native';
 import styled from 'styled-components/native';
 
-import {getMainCategories} from '../../../actions/categoryActions';
-
-const MENU = [
-  {label: 'Aperitivos'},
-  {label: 'Pizzas'},
-  {label: 'Massas'},
-  {id: 1, label: 'Hamburguer'},
-  {label: 'Pratos Quentes'},
-  {label: 'Bebidas'},
-];
+import {
+  getMainCategories,
+  setCurrentCategory,
+} from '../../../actions/categoryActions';
 
 const Button = styled.TouchableOpacity`
   height: 73;
@@ -30,23 +24,31 @@ const ButtonText = styled.Text`
 `;
 
 function Menu({navigate}) {
-  const {mainCategory} = useSelector(({category}) => category);
-  console.log('mainCategory: ', mainCategory);
+  const {mainCategory, currentCategory} = useSelector(({category}) => category);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getMainCategories());
   }, []);
 
+  const setCategory = categoryId => {
+    dispatch(setCurrentCategory(categoryId));
+  };
+
   return (
     <FlatList
       data={mainCategory.list}
       renderItem={({item}) => (
-        <Button onPress={() => navigate('Home')} active={item.id === 1}>
-          <ButtonText active={item.id === 1}>{item.name}</ButtonText>
+        <Button
+          onPress={() => setCategory(item.id)}
+          active={item.id === currentCategory.id}>
+          <ButtonText active={item.id === currentCategory.id}>
+            {item.name}
+          </ButtonText>
         </Button>
       )}
       keyExtractor={item => item.id}
+      extraData={currentCategory.id}
     />
   );
 }

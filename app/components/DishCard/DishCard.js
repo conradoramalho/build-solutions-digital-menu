@@ -3,6 +3,7 @@ import {Text} from 'react-native';
 import styled from 'styled-components/native';
 import Button from '../Button/Button';
 import {Hamburguer} from '../../assets/images';
+import {formatPrice} from '../../utils/formatPrice';
 
 const Wrapper = styled.View`
   height: 240;
@@ -72,18 +73,18 @@ const Dish = {
     'Molho de tomate fresco, calabresa especial fatiada, rodelas de cebola, orégano e azeitonas pretas',
 };
 
-function DishCard({openDetailsModal, openAddModal}) {
+function DishCard({dish, openDetailsModal, openAddModal}) {
   return (
     <Wrapper>
       <ImageWrapper>
-        <Image source={Hamburguer} />
+        <Image source={{uri: `http://168.194.230.42:5600${dish.img}`}} />
       </ImageWrapper>
       <Container>
         <Title>
-          <DishName>{Dish.title}</DishName>
-          <DishPrice>{Dish.price}</DishPrice>
+          <DishName>{dish.description}</DishName>
+          <DishPrice>{formatPrice(dish.unitPrice)}</DishPrice>
         </Title>
-        <Description>{Dish.description}</Description>
+        <Description>{dish.description}</Description>
         <Buttons>
           <Button title="Ver mais" onPress={openDetailsModal} />
           <Button title="Adicionar" onPress={openAddModal} />

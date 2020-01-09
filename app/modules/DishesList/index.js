@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 import {FlatList, Text} from 'react-native';
 import Menu from './Menu/Menu';
 import styled from 'styled-components/native';
 import DishCard from '../../components/DishCard/DishCard';
 import DishDetailsModal from './Dish/DishDetailsModal';
 import AddDishModal from './Dish/AddDishModal/AddDishModal';
+
+import {getDishesByCategory} from '../../actions/dishActions';
 
 import Cart from '../Cart/Cart';
 
@@ -26,6 +29,15 @@ function DishesList({navigation}) {
   const [dishModalItem, setDishModalItem] = useState({});
   const [addDishModalItem, setAddDishModalItem] = useState({});
 
+  const {currentCategory} = useSelector(({category}) => category);
+  const {dishes} = useSelector(({dish}) => dish);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getDishesByCategory(currentCategory.id));
+  }, [currentCategory.id]);
+
   useEffect(() => {
     console.log('dishModalItem: ', dishModalItem);
   }, [dishModalItem]);
@@ -38,6 +50,7 @@ function DishesList({navigation}) {
       'Hamburguer de picanha envolvido por uma massa de pizza, cebola caramelizada, picles e cheddar',
   });
 
+  console.log('dishes.list: ', dishes.list);
   return (
     <>
       <Wrapper>
@@ -46,9 +59,10 @@ function DishesList({navigation}) {
         </MenuWrapper>
         <Container>
           <FlatList
-            data={itens}
+            data={dishes.list}
             renderItem={({item}) => (
               <DishCard
+                dish={item}
                 openDetailsModal={() => setDishModalItem(item)}
                 openAddModal={() => setAddDishModalItem(item)}
               />
