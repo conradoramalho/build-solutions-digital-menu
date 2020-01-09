@@ -31,6 +31,12 @@ function Menu({navigate}) {
     dispatch(getMainCategories());
   }, []);
 
+  useEffect(() => {
+    if (mainCategory.list.length > 0) {
+      setCategory(mainCategory.list[0].id);
+    }
+  }, [mainCategory.list]);
+
   const setCategory = categoryId => {
     dispatch(setCurrentCategory(categoryId));
   };

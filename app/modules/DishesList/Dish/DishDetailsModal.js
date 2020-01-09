@@ -64,9 +64,9 @@ function DishDetailsModal({isVisible, onClose, dish}) {
   return (
     <Modal isVisible={isVisible}>
       <Wrapper>
-        <Image source={HamburguerDetails} />
+        <Image source={{uri: `http://168.194.230.42:5600${dish.img}`}} />
         <SecondWrapper>
-          <Title>{dish.title}</Title>
+          <Title>{dish.description}</Title>
           <InfoWrapper>
             <Label>1/2 porção</Label>
             <SecondLabel>- 1 pessoa</SecondLabel>
@@ -75,24 +75,8 @@ function DishDetailsModal({isVisible, onClose, dish}) {
             <Label>Inteira</Label>
             <SecondLabel>- 3 pessoas</SecondLabel>
           </InfoWrapper>
-
-          <Description>
-            Esse é o prato mais famoso da casa, por seus ingredientes
-            perfeitamente escolhidos e preparados pelo chef e sua equipe.
-            Hambúrguer de black angus, maionese de mostarda Dijon, picles,
-            pepino, cardamomo, cenoura e alcaparra, tomate confit, endívia,
-            queijo gruyère produzido pelo próprio chef e foie gras francês no
-            pão brioche de fermentação natural, feito aqui mesmo no nosso
-            restaurante.
-          </Description>
-          <Button
-            title="ADICIONAR AO CARRINHO"
-            onPress={() => {
-              console.log('clicou', onClose);
-
-              onClose();
-            }}
-          />
+          <Description>{dish.description}</Description>
+          <Button title="ADICIONAR AO CARRINHO" onPress={onClose} />
         </SecondWrapper>
       </Wrapper>
     </Modal>

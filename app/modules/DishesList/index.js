@@ -38,10 +38,6 @@ function DishesList({navigation}) {
     dispatch(getDishesByCategory(currentCategory.id));
   }, [currentCategory.id]);
 
-  useEffect(() => {
-    console.log('dishModalItem: ', dishModalItem);
-  }, [dishModalItem]);
-
   const itens = Array(20).fill({
     id: 2,
     title: 'Gran Prime Burguer',
