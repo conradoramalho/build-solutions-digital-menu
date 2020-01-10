@@ -38,15 +38,6 @@ function DishesList({navigation}) {
     dispatch(getDishesByCategory(currentCategory.id));
   }, [currentCategory.id]);
 
-  const itens = Array(20).fill({
-    id: 2,
-    title: 'Gran Prime Burguer',
-    price: 'R$ 37,00',
-    description:
-      'Hamburguer de picanha envolvido por uma massa de pizza, cebola caramelizada, picles e cheddar',
-  });
-
-  console.log('dishes.list: ', dishes.list);
   return (
     <>
       <Wrapper>
@@ -74,16 +65,16 @@ function DishesList({navigation}) {
         dish={dishModalItem}
       />
 
-      {/* <AddDishModal
+      <AddDishModal
         isVisible={!!addDishModalItem.id}
         onClose={() => setAddDishModalItem({})}
         dish={addDishModalItem}
       />
- */}
-      <Cart
+
+      {/*   <Cart
         isVisible={!!addDishModalItem.id}
         onClose={() => setAddDishModalItem({})}
-        dish={addDishModalItem}></Cart>
+        dish={addDishModalItem}></Cart> */}
     </>
   );
 }

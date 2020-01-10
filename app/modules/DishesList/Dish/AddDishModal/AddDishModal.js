@@ -6,6 +6,7 @@ import Counter from '../../../../components/Counter/Counter';
 import Button from '../../../../components/Button/Button';
 
 import {HamburguerAdd} from '../../../../assets/images';
+import {formatImageSource} from '../../../../utils/formatImageSource';
 
 import MenuItem from './MenuItem';
 
@@ -153,8 +154,8 @@ function AddDishModal({isVisible, onClose, dish}) {
           backgroundColor: '#fdfdfd',
         }}>
         <View style={{flex: 1}}>
-          <Image source={HamburguerAdd} />
-          <DishTitle>{dish.title}</DishTitle>
+          <Image source={formatImageSource(dish.img)} />
+          <DishTitle>{dish.description}</DishTitle>
           <ScrollView>
             {MENU_ITEMS.map(item => (
               <MenuItem key={item.id} item={item} />
