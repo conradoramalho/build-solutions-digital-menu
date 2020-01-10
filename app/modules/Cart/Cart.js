@@ -1,4 +1,6 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
+
 import {Text, View, Dimensions} from 'react-native';
 import Modal from 'react-native-modal';
 import styled from 'styled-components/native';
@@ -154,9 +156,12 @@ const ITEMS = [
 ];
 
 function Cart({isVisible, onClose, dish}) {
+  const {cart} = useSelector(state => state);
+  console.log('cart: ', cart.isOpen);
+
   return (
     <Modal
-      isVisible={isVisible}
+      isVisible={cart.isOpen}
       style={{marginHorizontal: 0, paddingHorizontal: 0}}>
       <ClickWrapper>
         <ClickIcon />

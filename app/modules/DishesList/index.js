@@ -71,10 +71,10 @@ function DishesList({navigation}) {
         dish={addDishModalItem}
       />
 
-      {/*   <Cart
+      <Cart
         isVisible={!!addDishModalItem.id}
         onClose={() => setAddDishModalItem({})}
-        dish={addDishModalItem}></Cart> */}
+        dish={addDishModalItem}></Cart>
     </>
   );
 }

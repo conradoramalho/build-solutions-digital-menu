@@ -1,7 +1,7 @@
 import * as actions from '../actions/cartActions';
 
 const INITIAL_STATE = {
-  isOpen: false,
+  isOpen: true,
   items: [],
 };
 

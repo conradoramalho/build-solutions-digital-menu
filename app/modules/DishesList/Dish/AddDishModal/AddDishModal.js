@@ -1,4 +1,5 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import {ScrollView, View, CheckBox} from 'react-native';
 import styled from 'styled-components';
 import Modal from 'react-native-modal';
@@ -7,6 +8,7 @@ import Button from '../../../../components/Button/Button';
 
 import {HamburguerAdd} from '../../../../assets/images';
 import {formatImageSource} from '../../../../utils/formatImageSource';
+import {addCartItem} from '../../../../actions/cartActions';
 
 import MenuItem from './MenuItem';
 
@@ -138,6 +140,13 @@ const ITEMS = [
 ];
 
 function AddDishModal({isVisible, onClose, dish}) {
+  const dispatch = useDispatch();
+
+  const onAddItem = () => {
+    dispatch(addCartItem(dish));
+    onClose();
+  };
+
   return (
     <Modal
       isVisible={isVisible}
@@ -181,7 +190,7 @@ function AddDishModal({isVisible, onClose, dish}) {
               </ItemWrapper>
             ))}
           </ScrollView>
-          <Finish title="Próxima" onPress={onClose} />
+          <Finish title="Próxima" onPress={onAddItem} />
         </SecondWrapper>
       </View>
     </Modal>
