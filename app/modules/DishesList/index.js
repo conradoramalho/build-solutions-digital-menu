@@ -9,8 +9,6 @@ import AddDishModal from './Dish/AddDishModal/AddDishModal';
 
 import {getDishesByCategory} from '../../actions/dishActions';
 
-import Cart from '../Cart/Cart';
-
 const Wrapper = styled.View`
   flex-direction: row;
 `;
@@ -70,11 +68,6 @@ function DishesList({navigation}) {
         onClose={() => setAddDishModalItem({})}
         dish={addDishModalItem}
       />
-
-      <Cart
-        isVisible={!!addDishModalItem.id}
-        onClose={() => setAddDishModalItem({})}
-        dish={addDishModalItem}></Cart>
     </>
   );
 }

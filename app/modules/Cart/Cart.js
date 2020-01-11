@@ -1,5 +1,5 @@
-import React from 'react';
-import {useSelector} from 'react-redux';
+import React, {useEffect} from 'react';
+import {useSelector, useDispatch} from 'react-redux';
 
 import {Text, View, Dimensions} from 'react-native';
 import Modal from 'react-native-modal';
@@ -10,6 +10,7 @@ import CartItem from './CartItem/CartItem';
 
 import ClickIcon from '../../assets/icons/icon-clique.svg';
 import TextBallon from '../../assets/icons/text-ballon.svg';
+import {closeCart} from '../../actions/cartActions';
 
 const {height} = Dimensions.get('window');
 
@@ -112,52 +113,11 @@ const ButtonWrapper = styled.View`
   padding: 22px 50px 0;
 `;
 
-const ITEMS = [
-  {
-    id: 1,
-    name: 'Cream Cheese Bacon Rib',
-    value: '53,00',
-  },
-  {
-    id: 2,
-    name: 'Porção bolinha de queijo',
-    value: '20,00',
-  },
-  {
-    id: 3,
-    name: 'Cream Cheese Bacon Rib',
-    value: '53,00',
-  },
-  {
-    id: 4,
-    name: 'Porção bolinha de queijo',
-    value: '20,00',
-  },
-  {
-    id: 5,
-    name: 'Cream Cheese Bacon Rib',
-    value: '53,00',
-  },
-  {
-    id: 6,
-    name: 'Porção bolinha de queijo',
-    value: '20,00',
-  },
-  {
-    id: 7,
-    name: 'Cream Cheese Bacon Rib',
-    value: '53,00',
-  },
-  {
-    id: 8,
-    name: 'Porção bolinha de queijo',
-    value: '20,00',
-  },
-];
-
-function Cart({isVisible, onClose, dish}) {
+function Cart() {
   const {cart} = useSelector(state => state);
-  console.log('cart: ', cart.isOpen);
+  const dispatch = useDispatch();
+
+  const onClose = () => dispatch(closeCart());
 
   return (
     <Modal
@@ -176,8 +136,8 @@ function Cart({isVisible, onClose, dish}) {
           <HeaderText>PEDIDOS</HeaderText>
         </HeaderWrapper>
         <ItemsWrapper>
-          {ITEMS.map(x => (
-            <CartItem key={x.id} item={x} />
+          {cart.items.map(dish => (
+            <CartItem key={dish.id} dish={dish} />
           ))}
         </ItemsWrapper>
         <TotalWrapper>

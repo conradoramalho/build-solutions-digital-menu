@@ -3,6 +3,8 @@ import {HamburguerDetails} from '../../../assets/images';
 import styled from 'styled-components/native';
 import DeleteIcon from '../../../assets/icons/delete-icon.svg';
 import EditIcon from '../../../assets/icons/edit-icon.svg';
+import {formatImageSource} from '../../../utils/formatImageSource';
+import {formatPrice} from '../../../utils/formatPrice';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -49,20 +51,20 @@ const Image = styled.Image`
   height: 100px;
 `;
 
-function CartItem({item}) {
+function CartItem({dish}) {
   return (
     <Wrapper>
       <InfoWrapper>
-        <Name>{item.name}</Name>
+        <Name>{dish.description}</Name>
         <Container>
-          <Value>{item.value}</Value>
+          <Value>{formatPrice(dish.unitPrice)}</Value>
           <IconsWrapper>
             <DeleteIcon style={{marginRight: 30}} />
             <EditIcon />
           </IconsWrapper>
         </Container>
       </InfoWrapper>
-      <Image source={HamburguerDetails} />
+      <Image source={formatImageSource(dish.img)} />
     </Wrapper>
   );
 }

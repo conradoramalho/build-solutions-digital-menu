@@ -1,4 +1,5 @@
 import React from 'react';
+import {useDispatch} from 'react-redux';
 import styled from 'styled-components/native';
 import {withNavigation} from 'react-navigation';
 
@@ -6,6 +7,8 @@ import {Logo} from '../../assets/images';
 import WaiterIcon from '../../assets/icon_garcom.svg';
 import OrdersIcon from '../../assets/icon_pedidos.svg';
 import AccountIcon from '../../assets/icon_minha_conta.svg';
+import Cart from '../../modules/Cart/Cart';
+import {openCart} from '../../actions/cartActions';
 
 const Wrapper = styled.View`
   flex-direction: row;
@@ -69,6 +72,10 @@ const MyAccount = styled.Text`
 `;
 
 function LogoTitle({navigation: {navigate}}) {
+  const dispatch = useDispatch();
+
+  const onOrdersClick = () => dispatch(openCart());
+
   return (
     <Wrapper>
       <LogoWrapper onPress={() => navigate('Home')}>
@@ -89,7 +96,7 @@ function LogoTitle({navigation: {navigate}}) {
         <CallWaiter>Garçom</CallWaiter>
       </WrapperBtns>
 
-      <WrapperBtns onPress={() => console.log('To orders')}>
+      <WrapperBtns onPress={onOrdersClick}>
         <Icon>
           <OrdersIcon />
         </Icon>
@@ -102,6 +109,7 @@ function LogoTitle({navigation: {navigate}}) {
         </Icon>
         <MyAccount>Minha Conta</MyAccount>
       </WrapperBtns>
+      <Cart />
     </Wrapper>
   );
 }
