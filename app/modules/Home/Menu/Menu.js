@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {SafeAreaView, FlatList} from 'react-native';
+import {FlatList} from 'react-native';
 import styled from 'styled-components/native';
 import BuildLogo from '../../../assets/icons/build-logo.svg';
 import BuildSolutionsModal from '../../../components/BuildSolutionsModal/BuildSolutionsModal';

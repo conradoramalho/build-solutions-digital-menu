@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {SafeAreaView, TouchableOpacity, FlatList, Text} from 'react-native';
+import {TouchableOpacity, FlatList, Text} from 'react-native';
 import styled from 'styled-components/native';
 
 import {
