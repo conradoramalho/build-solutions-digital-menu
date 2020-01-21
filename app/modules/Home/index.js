@@ -14,7 +14,7 @@ const MenuWrapper = styled.View`
 const Text = styled.Text``;
 
 const SlideWrapper = styled.View`
-  width: 944px;
+  width: 1030px;
   margin: auto;
   flex-direction: column;
 `;

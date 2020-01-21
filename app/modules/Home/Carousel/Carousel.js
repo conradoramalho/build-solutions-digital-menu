@@ -48,6 +48,7 @@ const Subtitle = styled.Text`
 
 function HomeCarousel() {
   const {highlights} = useSelector(({home}) => home);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -55,6 +56,7 @@ function HomeCarousel() {
   }, []);
 
   const renderItem = ({item, index}) => {
+    console.log('item: ', item);
     return (
       <Container>
         <TextContainer>

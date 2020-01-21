@@ -62,7 +62,7 @@ function Menu({navigate, active}) {
             <ButtonText>{item.title}</ButtonText>
           </Button>
         )}
-        keyExtractor={item => item.id}
+        keyExtractor={item => `item-${item.id}`}
       />
 
       <BuildWrapper onPress={() => setIsBuildModalVisible(true)}>

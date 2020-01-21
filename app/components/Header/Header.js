@@ -85,7 +85,7 @@ function LogoTitle({navigation: {navigate}}) {
       <Search
         style={{height: 40, borderColor: 'gray', borderWidth: 1}}
         onChangeText={text => console.log(text)}
-        value={10}
+        value={`10`}
         placeholder="Buscar"
       />
 
