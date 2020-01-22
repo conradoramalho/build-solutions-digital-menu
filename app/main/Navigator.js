@@ -28,6 +28,7 @@ const RootStack = createStackNavigator(
   },
   {
     initialRouteName: 'Home',
+    headerMode: 'float',
     defaultNavigationOptions: {
       header: <Header />,
     },
